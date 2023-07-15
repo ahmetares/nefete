@@ -1,8 +1,10 @@
 import { StyleSheet,Text,View,ScrollView } from 'react-native';
+import CustomLinearGradient from '../components/CustomLinearGradient';
 
 function Privacy() { 
 
     return (
+      <CustomLinearGradient>
       <ScrollView style={{flex:1}}>
         <View style={styles.mainView}>
           <Text style={styles.mainTitle}>Gizlilik Bildirisi</Text>
@@ -39,6 +41,7 @@ function Privacy() {
           </Text>
         </View>
       </ScrollView>
+      </CustomLinearGradient>
     );
   
    }

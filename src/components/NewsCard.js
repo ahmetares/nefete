@@ -1,12 +1,13 @@
-import { View,Text, StyleSheet, Image,TouchableOpacity } from "react-native";
+import { View,Text, StyleSheet, Image,TouchableOpacity, Dimensions } from "react-native";
 
 
-function NewsCard({news}) {
+function NewsCard({news,onClick}) {
 
   
 
     return(
-        <TouchableOpacity style={styles.container}>
+        <TouchableOpacity style={styles.container} onPress={onClick}>
+
             <View style={styles.newsContainer}>
                 <Image style={styles.image} source={{uri:`https://nefete.com.tr/${news.thumbnail}` }} />
 
@@ -15,6 +16,8 @@ function NewsCard({news}) {
                     <Text style={styles.date}> {news.created_at} </Text>
                 </View>
             </View>
+
+
         </TouchableOpacity>
     )
     
@@ -24,8 +27,10 @@ const styles = StyleSheet.create({
 
     container: {
         flex:1,
-        margin:10,
-        padding:5
+        marginHorizontal:7,
+        paddingHorizontal:8,
+        width:Dimensions.get('window').width,
+     
     },
 
     newsContainer:{
@@ -33,8 +38,9 @@ const styles = StyleSheet.create({
         
     },
     image: {
-        width:50,
-        height:50
+        width:100,
+        height:100,
+        borderRadius:10
     },
     textsContainer:{
         marginLeft:10,
@@ -43,8 +49,11 @@ const styles = StyleSheet.create({
     },
     title:{
         fontWeight:'bold',
-        fontSize:18
-    }
+        fontSize:18,
+        flex:1
+
+    },
+
 
 })
 

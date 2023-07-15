@@ -5,6 +5,8 @@ import { setCurrentDrawer,toggleDrawerFalse,setToggleDrawer } from '../store/gen
 import { BlurView, VibrancyView } from "@react-native-community/blur";
 import DrawerModal from '../components/modals/DrawerModal';
 
+import CustomLinearGradient from '../components/CustomLinearGradient';
+
 function HomeScreen({ navigation }) {
   const dispatch = useDispatch()
   const drawerStatus = useSelector((state) => state.general.toggleDrawer)
@@ -30,6 +32,7 @@ function HomeScreen({ navigation }) {
 
   
   return (
+    <CustomLinearGradient>
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
      
             <Button onPress={toggleModal} title="Open Modal"> </Button>       
@@ -43,6 +46,7 @@ function HomeScreen({ navigation }) {
         onClose={handleModalClose}
         navigation={navigation}  />
       </View>
+      </CustomLinearGradient>
 
   );
 }

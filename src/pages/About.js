@@ -1,16 +1,17 @@
 import {useState,useEffect} from 'react'
 import { Text, View } from 'react-native';
-import AboutText from '../assets/texts/AboutText';
 
+import AboutText from '../assets/texts/AboutText';
+import CustomLinearGradient from '../components/CustomLinearGradient';
 
 
 
 function About({}) {
 
     return (
-      <View style={{flex:1,marginBottom:20}} >
+      <CustomLinearGradient style={{flex:1,marginBottom:20}} >
         <AboutText/>
-      </View>
+      </CustomLinearGradient>
     );
   }
 

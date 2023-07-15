@@ -7,11 +7,11 @@ import { useSelector,useDispatch } from 'react-redux'
 import HomeScreen from '../pages/HomeScreen';
 import About from '../pages/About';
 import News from '../pages/News';
-import Article from '../pages/Article';
 import SettingsScreen from '../pages/Setting';
 import Market from '../pages/Market';
 import NFT101 from '../pages/NFT101';
 import Privacy from '../pages/Privacy';
+import NewsDetail from '../pages/NewsDetail';
 
 import GoBackButton from '../components/GoBackButton';
 import { setBackIconVisible } from '../store/generalSlice/generalSlice';
@@ -27,6 +27,37 @@ const Stack = createNativeStackNavigator();
          <Stack.Screen name="About" component={About}  />
          <Stack.Screen name="Privacy" component={Privacy}  />
          <Stack.Screen name="Setting" component={SettingsScreen}  />
+         <Stack.Screen name="NewsDetail" component={NewsDetail}  />
+        </Stack.Navigator>
+      )
+  }
+
+  const Newstack = () => {
+    return(
+      <Stack.Navigator screenOptions={{headerShown:false}}>
+         <Stack.Screen name="News" component={News}  />
+         <Stack.Screen name="NewsDetail" component={NewsDetail}  />
+
+        </Stack.Navigator>
+      )
+  }
+
+  const NFT101Stack = () => {
+    return(
+      <Stack.Navigator screenOptions={{headerShown:false}}>
+         <Stack.Screen name="NFT101Stack" component={NFT101}  />
+         <Stack.Screen name="NewsDetail" component={NewsDetail}  />
+
+        </Stack.Navigator>
+      )
+  }
+
+  const MarketStack = () => {
+    return(
+      <Stack.Navigator screenOptions={{headerShown:false}}>
+         <Stack.Screen name="MarketStack" component={Market}  />
+         <Stack.Screen name="NewsDetail" component={NewsDetail}  />
+
         </Stack.Navigator>
       )
   }
@@ -46,17 +77,17 @@ const Stack = createNativeStackNavigator();
       },     
     }} />
 
-    <Tab.Screen name="Haberler"component={News} listeners={{
+    <Tab.Screen name="Haberler"component={Newstack} listeners={{
       tabPress: () => {
         dispatch(setBackIconVisible(false))
       },     
     }} />
-    <Tab.Screen name="NFT 101" component={NFT101} listeners={{
+    <Tab.Screen name="NFT 101" component={NFT101Stack} listeners={{
       tabPress: () => {
         dispatch(setBackIconVisible(false))
       },     
     }}  /> 
-    <Tab.Screen name="Market" component={Market} listeners={{
+    <Tab.Screen name="Market" component={MarketStack} listeners={{
       tabPress: () => {
         dispatch(setBackIconVisible(false))
       },     
