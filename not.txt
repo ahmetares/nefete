@@ -1,0 +1,125 @@
+import { WebView } from 'react-native-webview';
+
+
+  <View style={styles.container}>
+      <WebView
+        source={{uri: 'https://nefete.com.tr/'}}
+        style={styles.video}
+      />
+    </View>
+
+
+container: {
+  flex: 1,
+  alignItems: 'center',
+  justifyContent: 'space-between',
+
+},
+video: {
+  maxHeight: Dimensions.get('window').height,
+  width: Dimensions.get('window').width,
+  flex: 1
+}
+
+
+
+//drawer daki babel plugin hataları çözümü:
+
+* babel config.js
+module.exports = {
+  presets: ['module:metro-react-native-babel-preset'],
+  plugins: [
+    'react-native-reanimated/plugin',
+  ],
+};
+
+* bazen şu kodu dene npx react-native start --reset-cache
+
+
+
+
+function Feed() {
+    return (
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+        <Text>Feed Screen</Text>
+      </View>
+    );
+  }
+  
+  function Article() {
+    return (
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+        <Text>Article Screen</Text>
+      </View>
+    );
+  }
+
+  function MyDrawer() {
+    return (
+      <Drawer.Navigator>
+        <Drawer.Screen name="Feed" component={Feed} />
+        <Drawer.Screen name="Article" component={Article} />
+      </Drawer.Navigator>
+    );
+  }
+
+export default function Router() {
+  return (
+    <NavigationContainer>
+            <MyDrawer />
+
+    </NavigationContainer>
+  );
+}
+
+
+
+
+
+// tabın içine drawer'ı gömdük ve istediğimiz oldu
+ama buglu, drawerın içinden gezinemiyoruz istediğimiz gibi
+
+
+https://www.youtube.com/watch?v=Dx2bINsGsJw
+
+
+
+
+
+////
+
+
+ana sayfa
+****
+tüm haberler 
+learn
+markets
+****
+
+tüm haberler 
+*****
+top tab şeklinde all müzik gaming
+*****
+
+
+NFT 101
+*****
+learn yazıları
+*****
+
+
+market
+*****
+api vs
+******
+
+
+
+
+drawer
+***
+cart curt
+****
+
+
+drawer sadce ana sayfadan erişim
