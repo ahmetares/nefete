@@ -1,4 +1,4 @@
-import { View,Image,StyleSheet,TouchableOpacity, Dimensions } from 'react-native';
+import { View,Image,StyleSheet,Animated,TouchableOpacity, Dimensions } from 'react-native';
 import { NavigationContainer,useNavigation,useIsFocused } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -12,6 +12,7 @@ import Market from '../pages/Market';
 import NFT101 from '../pages/NFT101';
 import Privacy from '../pages/Privacy';
 import NewsDetail from '../pages/NewsDetail';
+import NewsScreen from '../pages/NewsScreen';
 
 import GoBackButton from '../components/GoBackButton';
 import { setBackIconVisible } from '../store/generalSlice/generalSlice';
@@ -33,9 +34,10 @@ const Stack = createNativeStackNavigator();
   }
 
   const Newstack = () => {
+  
     return(
-      <Stack.Navigator screenOptions={{headerShown:false}}>
-         <Stack.Screen name="News" component={News}  />
+      <Stack.Navigator screenOptions={{headerShown:false}} >
+         <Stack.Screen name="News" component={NewsScreen}  />
          <Stack.Screen name="NewsDetail" component={NewsDetail}  />
 
         </Stack.Navigator>
@@ -56,7 +58,6 @@ const Stack = createNativeStackNavigator();
     return(
       <Stack.Navigator screenOptions={{headerShown:false}}>
          <Stack.Screen name="MarketStack" component={Market}  />
-         <Stack.Screen name="NewsDetail" component={NewsDetail}  />
 
         </Stack.Navigator>
       )
@@ -100,7 +101,8 @@ const Stack = createNativeStackNavigator();
 export default function Router({}) {
 
   
-
+  const av = new Animated.Value(0);
+    av.addListener(() => {return});
   return (
     <NavigationContainer>
      <Stack.Navigator screenOptions={{headerShown:true, }}>
@@ -140,7 +142,7 @@ export default function Router({}) {
 
 const styles = StyleSheet.create({
   logo:{
-    marginBottom:3,
+    marginBottom:9,
     backgroundColor:'transparent',
     alignItems:'center',
     width:'30%',
