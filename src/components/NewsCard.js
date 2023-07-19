@@ -1,7 +1,11 @@
 import { View,Text, StyleSheet, Image,TouchableOpacity, Dimensions } from "react-native";
 
+import formatDate from "../helper/dateFormatter";
+
 
 function NewsCard({news,onClick}) {
+
+    const date = formatDate(news.created_at)
 
   
 
@@ -13,7 +17,11 @@ function NewsCard({news,onClick}) {
 
                 <View style={styles.textsContainer}>
                     <Text style={styles.title}> {news.title} </Text>
-                    <Text style={styles.date}> {news.created_at} </Text>
+
+                    <View style={{justifyContent:'flex-end',alignItems:'flex-end'}}>
+                    <Text style={styles.date}> {date} </Text>
+                    </View>
+
                 </View>
             </View>
 
@@ -53,6 +61,9 @@ const styles = StyleSheet.create({
         flex:1
 
     },
+    date:{
+        color:'grey'
+    }
 
 
 })

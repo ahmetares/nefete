@@ -1,8 +1,9 @@
 import { View,Image,StyleSheet,Animated,TouchableOpacity, Dimensions } from 'react-native';
-import { NavigationContainer,useNavigation,useIsFocused } from '@react-navigation/native';
+import { NavigationContainer,useNavigation, } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { useSelector,useDispatch } from 'react-redux'
+import { useRoute,useIsFocused } from '@react-navigation/native';
 
 import HomeScreen from '../pages/HomeScreen';
 import About from '../pages/About';
@@ -22,6 +23,9 @@ const Stack = createNativeStackNavigator();
 
 
   const HomeStack = () => {
+
+    
+
     return(
       <Stack.Navigator screenOptions={{headerShown:false}}>
          <Stack.Screen name="Home" component={HomeScreen}  />
@@ -65,6 +69,10 @@ const Stack = createNativeStackNavigator();
 
   function TabNavigator({navigation}) {
 
+
+
+   
+
     const dispatch = useDispatch()
 
     return (
@@ -100,9 +108,9 @@ const Stack = createNativeStackNavigator();
 
 export default function Router({}) {
 
-  
-  const av = new Animated.Value(0);
-    av.addListener(() => {return});
+
+
+
   return (
     <NavigationContainer>
      <Stack.Navigator screenOptions={{headerShown:true, }}>

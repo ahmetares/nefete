@@ -37,12 +37,12 @@ function NFT101({navigation}) {
       <CustomLinearGradient>
         <Header title={'NFT 101'} description={'Web3 dünyasının tüm detaylarını öğren'} />
         <FlatList data={nft101News} 
-           keyExtractor={item => "_" + item.id}
+          keyExtractor={item => "_" + item.id}
 
                   ItemSeparatorComponent={() => (
                   <View style={styles.seperator} />)} 
                    ListHeaderComponent={()=> <View style={{marginBottom:20}}></View>}
-                 numColumns={2} renderItem={({item}) => <NFT101Card nft101={item} onClick={()=>navigateToNewsDetail(item)}/> } />
+                   renderItem={({item}) => <NFT101Card nft101={item} onClick={()=>navigateToNewsDetail(item)}/> } />
       </CustomLinearGradient>
     );
   }

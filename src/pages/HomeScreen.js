@@ -80,26 +80,18 @@ function HomeScreen({ navigation }) {
      </View>
      </TouchableWithoutFeedback>
 
-
-
       <FlatList
-      ItemSeparatorComponent={() => (
-      <View style={styles.seperator} />)} 
+      ItemSeparatorComponent={() => ( <View style={styles.seperator} />)} 
       ListHeaderComponent={()=> <FirstNews news={homeNews[0]} />}
       ListFooterComponent={ <HomeNFT101 data={homeNft101} navigation={navigation} />}
-
-
       data={homeNews.slice(1)} 
       renderItem={({item}) => <NewsCard news={item} onClick={()=>navigateToNewsDetail(item)}/>} />
 
-
-
-        {drawerStatus && openedModalTasks()}
+      {drawerStatus && openedModalTasks()}
         <DrawerModal
         visible={drawerStatus}
         onClose={handleModalClose}
         navigation={navigation}  />
-
 
       </View>
 

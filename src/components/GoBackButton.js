@@ -9,7 +9,7 @@ const GoBackButton = ({}) => {
     const navigation = useNavigation();
     const dispatch = useDispatch()
    const goBackFunctionality = () => {
-    navigation.navigate('Home')
+    navigation.navigate('Anasayfa')
     dispatch(setBackIconVisible(false))
 
     }

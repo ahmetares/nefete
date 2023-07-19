@@ -4,17 +4,16 @@ import { setCurrentDrawer } from '../store/generalSlice/generalSlice';
 import { useSelector, useDispatch } from 'react-redux'
 
 
-function Header({title,description}) {
+function Header({title,description,color,border}) {
 
   
     return (
-      <View style={styles.container}>
-       <View style={styles.seperator} />
+      <View style={[styles.container, {...color}]}>
+       <View style={[styles.seperator, {...border}]} />
         <View style={styles.textContainer}>
         <Text style={styles.title}>{title} </Text>
         <Text style={styles.description}>{description} </Text>
         </View>
-        <View style={styles.bottomseperator} />
       </View>
     );
   }

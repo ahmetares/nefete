@@ -9,7 +9,6 @@ const TabBar = ({ state, navigation }) => {
   const [selected, setSelected] = useState('Home');
   const { routes } = state;
   const renderColor = currentTab => (currentTab === selected ? 'red' : 'black');
-    console.log(useTabBar())
 
   const animation = useRef(new Animated.Value(0)).current;
 

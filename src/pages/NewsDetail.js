@@ -1,17 +1,24 @@
 import {useState,useEffect} from 'react'
 import { ScrollView, StyleSheet, Image,Text, View, Dimensions, useWindowDimensions, ActivityIndicator } from 'react-native';
-import { setCurrentDrawer } from '../store/generalSlice/generalSlice';
+import { setCurrentDrawer,setBackIconVisible } from '../store/generalSlice/generalSlice';
 import { useSelector, useDispatch } from 'react-redux'
 import axios from 'axios';
 import RenderHtml from 'react-native-render-html';
+import Moment from 'moment';
+import dateFns from 'date-fns'
+import { NavigationContainer,useNavigation,useIsFocused } from '@react-navigation/native';
 
+import formatDate from '../helper/dateFormatter';
 import CustomLinearGradient from '../components/CustomLinearGradient';
-function NewsDetail({route}) {
 
 
+function NewsDetail({route,navigation}) {
 
-    const {title,details,thumbnail} = route.params.item
 
+    const {title,details,thumbnail,created_at} = route.params.item
+
+    const date = formatDate(created_at)
+    const dispatch = useDispatch()
 
 
   /*   API ye istek atmak yerine parametre vererek gönderince daha hızlı oldu. (resimler yine istek webe istek atıyor.)
@@ -30,6 +37,14 @@ function NewsDetail({route}) {
         setLoading(false)
       },[]) */
 
+      const isFocused = useIsFocused();
+
+      useEffect(() => {
+        if (isFocused) {  
+          dispatch(setBackIconVisible(true))
+        }
+      }, [isFocused])
+
     
 
       const source = {
@@ -47,16 +62,13 @@ function NewsDetail({route}) {
       };
 
 
-      
-
-
-
-  
     return (
         <CustomLinearGradient>
       <ScrollView style={{ flex: 1}}>
 
       <Text style= {styles.title}>{title}</Text>
+      <Text style= {styles.date}>{date}</Text>
+
 
 
         <View style={styles.imageContainer}>
@@ -95,8 +107,15 @@ function NewsDetail({route}) {
       fontSize:28,
       marginHorizontal:5,
       marginTop:'5%',
-      display:'flex'
+      display:'flex',
+      padding:7
 
+    },
+
+    date:{
+      color:'grey',
+      marginTop:10,
+      padding:10
     },
 
     detail:{

@@ -8,9 +8,8 @@ import LinearGradient from 'react-native-linear-gradient';
 import NewsCard from '../components/NewsCard';
 import CustomLinearGradient from '../components/CustomLinearGradient';
 
-function NewsCategory({navigate,categoryName}) {
+function NewsCategory({navigation,categoryName}) {
 
-    const navigation = useNavigation();
     const isFocused = useIsFocused();
     const dispatch= useDispatch()
 

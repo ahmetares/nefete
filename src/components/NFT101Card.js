@@ -2,9 +2,13 @@ import {useState,useEffect} from 'react'
 import { Text, Dimensions,TouchableOpacity,Image,View,StyleSheet } from 'react-native';
 import { setCurrentDrawer } from '../store/generalSlice/generalSlice';
 import { useSelector, useDispatch } from 'react-redux'
-
+import truncate from '../helper/textTruncate';
 
 function NFT101Card({nft101,onClick}) {
+
+   
+    const subtitle = truncate(nft101.sub_title, 15)
+    
 
   
   
@@ -30,11 +34,8 @@ const styles = StyleSheet.create({
 
     container: {
         padding:15,
-        flex:1,
-        marginHorizontal:7,
         paddingHorizontal:8,
         width:Dimensions.get('window').width,
-        marginBottom:25,
         borderColor:'grey',
      
     },
@@ -45,8 +46,8 @@ const styles = StyleSheet.create({
         
     },
     image: {
-        width:(Dimensions.get('window').width/2)-30,
-        height:(Dimensions.get('window').height/4.5),
+        width:(Dimensions.get('window').width)-16,
+        height:(Dimensions.get('window').height/4),
         borderRadius:8,
         
     },
@@ -57,6 +58,8 @@ const styles = StyleSheet.create({
     title:{
         fontWeight:'bold',
         fontSize:18,
+        marginTop:10,
+        marginBottom:10,
         flex:1
 
     },
