@@ -17,6 +17,10 @@ function HomeNFT101({navigation,data}) {
   const navigationToNFT101 = () => {
     navigation.navigate('NFT 101')
   }
+
+  const navigateToNewsDetail = (item) => {
+    navigation.navigate('NewsDetail', {item})
+  }
   
     return (
       <View>
@@ -37,9 +41,8 @@ function HomeNFT101({navigation,data}) {
 
         <FlatList 
         data={data} 
-        key={'_'} 
-        numColumns={2} 
-        renderItem={({item}) => <NFT101Card nft101={item} onClick={null}/>} 
+        keyExtractor={item => "_" + item.id}
+        renderItem={({item}) => <NFT101Card nft101={item} onClick={() => navigateToNewsDetail(item)}/>} 
         ListFooterComponent={ <></>}
         />
 

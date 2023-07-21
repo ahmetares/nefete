@@ -1,12 +1,15 @@
 import { View,Text, StyleSheet, Image,TouchableOpacity, Dimensions } from "react-native";
 
 
-function HomeFirstNews({news,onClick}) {
+function HomeFirstNews({news,navigation}) {
 
+    const navigateToNewsDetail = (item) => {
+        navigation.navigate('NewsDetail', {item})
+      }
   
 
     return(
-        <TouchableOpacity style={styles.container} onPress={onClick}>
+        <TouchableOpacity style={styles.container} onPress={() => navigateToNewsDetail(news)}>
 
             <View style={styles.newsContainer}>
                 <View style={styles.imageContainer}>
@@ -44,13 +47,12 @@ const styles = StyleSheet.create({
    //     backgroundColor:'green',
         flex:1,
         justifyContent:'center',
-        alignItems:'center'
+        alignItems:'center',
     },
     image: {
         width:Dimensions.get('window').width,
         height:Dimensions.get('window').width/1.9,
-        borderRadius:10,
-        resizeMode:'contain'
+        resizeMode:'contain',
     },
     textsContainer:{
         flexDirection:"column",
@@ -60,7 +62,8 @@ const styles = StyleSheet.create({
         fontWeight:'bold',
         fontSize:18,
         flex:1,
-        marginVertical:7
+        marginVertical:7,
+        color:'black'
 
     },
     subtitle:{

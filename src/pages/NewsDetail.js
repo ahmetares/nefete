@@ -2,10 +2,7 @@ import {useState,useEffect} from 'react'
 import { ScrollView, StyleSheet, Image,Text, View, Dimensions, useWindowDimensions, ActivityIndicator } from 'react-native';
 import { setCurrentDrawer,setBackIconVisible } from '../store/generalSlice/generalSlice';
 import { useSelector, useDispatch } from 'react-redux'
-import axios from 'axios';
 import RenderHtml from 'react-native-render-html';
-import Moment from 'moment';
-import dateFns from 'date-fns'
 import { NavigationContainer,useNavigation,useIsFocused } from '@react-navigation/native';
 
 import formatDate from '../helper/dateFormatter';
@@ -40,10 +37,10 @@ function NewsDetail({route,navigation}) {
       const isFocused = useIsFocused();
 
       useEffect(() => {
-        if (isFocused) {  
-          dispatch(setBackIconVisible(true))
-        }
-      }, [isFocused])
+        
+       dispatch(setBackIconVisible(true))
+       
+      }, [])
 
     
 
@@ -67,8 +64,10 @@ function NewsDetail({route,navigation}) {
       <ScrollView style={{ flex: 1}}>
 
       <Text style= {styles.title}>{title}</Text>
-      <Text style= {styles.date}>{date}</Text>
 
+      <View style={{justifyContent:'flex-end', alignItems:'flex-end'}}>
+      <Text style= {styles.date}>{date}</Text>
+      </View>
 
 
         <View style={styles.imageContainer}>
@@ -114,8 +113,9 @@ function NewsDetail({route,navigation}) {
 
     date:{
       color:'grey',
-      marginTop:10,
-      padding:10
+      marginTop:8,
+      padding:7,
+     
     },
 
     detail:{

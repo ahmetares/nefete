@@ -16,7 +16,7 @@ import NewsDetail from '../pages/NewsDetail';
 import NewsScreen from '../pages/NewsScreen';
 
 import GoBackButton from '../components/GoBackButton';
-import { setBackIconVisible } from '../store/generalSlice/generalSlice';
+import { setBackIconVisible, setCurrentPage } from '../store/generalSlice/generalSlice';
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -83,22 +83,28 @@ const Stack = createNativeStackNavigator();
       tabPress: () => {
         navigation.navigate('Home')
         dispatch(setBackIconVisible(false))
+        dispatch(setCurrentPage('Home'))
       },     
     }} />
 
     <Tab.Screen name="Haberler"component={Newstack} listeners={{
       tabPress: () => {
         dispatch(setBackIconVisible(false))
+        dispatch(setCurrentPage('News'))
       },     
     }} />
     <Tab.Screen name="NFT 101" component={NFT101Stack} listeners={{
       tabPress: () => {
         dispatch(setBackIconVisible(false))
+        dispatch(setCurrentPage('NFT101Stack'))
+
       },     
     }}  /> 
     <Tab.Screen name="Market" component={MarketStack} listeners={{
       tabPress: () => {
         dispatch(setBackIconVisible(false))
+        dispatch(setCurrentPage('MarketStack'))
+
       },     
     }} />
 

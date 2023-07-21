@@ -1,5 +1,5 @@
 import { View,Text, StyleSheet, Image,TouchableOpacity, Dimensions } from "react-native";
-
+import { memo } from "react";
 import formatDate from "../helper/dateFormatter";
 
 
@@ -58,7 +58,8 @@ const styles = StyleSheet.create({
     title:{
         fontWeight:'bold',
         fontSize:18,
-        flex:1
+        flex:1,
+        color:'black'
 
     },
     date:{

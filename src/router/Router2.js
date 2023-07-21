@@ -1,165 +1,141 @@
-import {useState,useEffect} from 'react'
-import { Button, Text, View,TouchableOpacity } from 'react-native';
-import { NavigationContainer,useNavigation,useIsFocused } from '@react-navigation/native';
+import { View,Image,StyleSheet,Animated,TouchableOpacity, Dimensions } from 'react-native';
+import { NavigationContainer,useNavigation, } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { createDrawerNavigator } from '@react-navigation/drawer';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { useSelector, useDispatch } from 'react-redux'
-import { setCurrentDrawer,setToggleDrawer,setCurrentBottom } from '../store/generalSlice/generalSlice';
-import { DrawerActions } from '@react-navigation/native'
+import { useSelector,useDispatch } from 'react-redux'
+import { useRoute,useIsFocused } from '@react-navigation/native';
 
 import HomeScreen from '../pages/HomeScreen';
-import Feed from '../pages/About';
+import About from '../pages/About';
 import News from '../pages/News';
-import TabBar from '../components/TabBar';
+import SettingsScreen from '../pages/Setting';
+import Market from '../pages/Market';
+import NFT101 from '../pages/NFT101';
+import Privacy from '../pages/Privacy';
+import NewsDetail from '../pages/NewsDetail';
+import NewsScreen from '../pages/NewsScreen';
 
-
-
+import GoBackButton from '../components/GoBackButton';
+import { setBackIconVisible } from '../store/generalSlice/generalSlice';
 
 const Tab = createBottomTabNavigator();
-const Drawer = createDrawerNavigator();
 const Stack = createNativeStackNavigator();
 
 
+  const HomeStack = () => {
 
 
-function SettingsScreen({navigation}) {
 
-  
-  
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Setting screen: Haberler ve market</Text>
-    </View>
-  );
-}
-  
-  function Article() {
-    return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>Article Screen</Text>
-      </View>
-    );
+    return(
+      <Stack.Navigator screenOptions={{headerShown:false}}>
+         <Stack.Screen name="Home" component={HomeScreen}  />
+         <Stack.Screen name="About" component={About}  />
+         <Stack.Screen name="Privacy" component={Privacy}  />
+         <Stack.Screen name="Setting" component={SettingsScreen}  />
+         <Stack.Screen name="NewsDetail" component={NewsDetail}  />
+        </Stack.Navigator>
+      )
   }
 
+  const Newstack = () => {
 
+  
+    return(
+      <Stack.Navigator screenOptions={{headerShown:false}} >
+         <Stack.Screen name="News" component={NewsScreen}  />
+         <Stack.Screen name="NewsDetail" component={NewsDetail}  />
 
-  function NFT101() {
-    return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>NFT101</Text>
-      </View>
-    );
+        </Stack.Navigator>
+      )
   }
 
-  function Market() {
-    return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>Market</Text>
-      </View>
-    );
+  const NFT101Stack = () => {
+
+    return(
+      <Stack.Navigator screenOptions={{headerShown:false}}>
+         <Stack.Screen name="NFT101Stack" component={NFT101}  />
+         <Stack.Screen name="NewsDetail" component={NewsDetail}  />
+
+        </Stack.Navigator>
+      )
   }
 
-  function TabNavigator({navigation}) {
-
-   const dispatch= useDispatch()
-   const currentBottom = useSelector((state) => state.general.currentBottom)
+  const MarketStack = () => {
 
 
-    
+    return(
+      <Stack.Navigator screenOptions={{headerShown:false}}>
+         <Stack.Screen name="MarketStack" component={Market}  />
+
+        </Stack.Navigator>
+      )
+  }
+
+  export default function Router({navigation}) {
+
+
 
     return (
-    <Tab.Navigator screenOptions={{headerShown:false,}} >
+    <NavigationContainer>
+    <Tab.Navigator 
+    screenOptions={{
+                    headerBackground: () => {
+                      return(
+                      <View style={{display:'flex', marginTop:'8%',justifyContent:'space-evenly', alignItems:'center',}}>
+                      <Image style={styles.logo} source = {{uri:'https://nefete.com.tr/img/logo.png'}}/>
+                      </View>
+                    )
+                },
+                    title:'',
+                    headerTitleAlign:'center',
+                    headerLeft: () => {
+                      const backIconVisible = useSelector((state) => state.general.backIconVisible)
+                      return(
+                        <View>
+                        {backIconVisible && <GoBackButton/> }
+                        </View>
+                      )
+                    },  }} >
 
-    <Tab.Screen 
-    name="Anasayfa" 
-    component={HomeScreen}    
-   />
-    
-    <Tab.Screen 
-    name="Haberler"
-    component={News} 
-    />
 
+    <Tab.Screen name="Anasayfa"  component={HomeStack} 
+    listeners={{
+      tabPress: () => {
+        const navigation = useNavigation(); // Use the useNavigation hook to access the navigation object
 
-    <Tab.Screen name="NFT 101" 
-    component={NFT101} 
-    />
+        navigation.navigate('Anasayfa')
+        dispatch(setBackIconVisible(false))
+      },     
+    }} />
 
-     
-    <Tab.Screen name="Market" 
-    component={Market}
-    />
+    <Tab.Screen name="Haberler"component={Newstack} listeners={{
+      tabPress: () => {
+      },     
+    }} />
+    <Tab.Screen name="NFT 101" component={NFT101Stack} listeners={{
+      tabPress: () => {
+      },     
+    }}  /> 
+    <Tab.Screen name="Market" component={MarketStack} listeners={{
+      tabPress: () => {
+      },     
+    }} />
 
   </Tab.Navigator>
+  </NavigationContainer>
   )
-    }
-
-    const HomeScreenStack = () => {
-        return (
-          <Stack.Navigator
-            initialRouteName="HomeScreen"
-            screenOptions={{headerShown: false}}>
-            <Stack.Screen name="BottomTabStack" component={TabNavigator} />
-          </Stack.Navigator>
-        );
-      };
-
-    function FeedStack() {
-        return(
-            <Stack.Navigator screenOptions={{headerShown:false}}>
-             <Stack.Screen name="Tabbar" component={TabNavigator}  />
-
-              <Stack.Screen name="Feed" component={Feed}  />
-              </Stack.Navigator>
-            )
-    }
-
-    function MyDrawer({}) {
-   
-    return (
-      <Drawer.Navigator>
-
-        <Drawer.Screen 
-        name="TabStack" 
-        component={HomeScreenStack} 
-      
-        />
-
-      <Drawer.Screen 
-        name="Article" 
-        component={Article} 
-        />
-
-      <Drawer.Screen 
-        name="FeedStack" 
-        component={FeedStack} 
-        />
-    
-      </Drawer.Navigator>
-    );
-  }
- 
-
-
-
-export default function Router({navigation}) {
-
-  return (
-    <NavigationContainer>
-     <Stack.Navigator screenOptions={{headerShown:true}}>
-
-         <Stack.Screen 
-         name="Nefffffete" 
-         component={MyDrawer}
-         options={{
-          headerShown:false,
-            headerLeft: () => {
-              return(
-                <Button title='Drawer' onPress={null} />)
-            }}}/>
-
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
 }
+
+
+
+const styles = StyleSheet.create({
+  logo:{
+    marginBottom:9,
+    backgroundColor:'transparent',
+    alignItems:'center',
+    width:'30%',
+    height:'100%',
+    resizeMode:'contain',
+
+},
+})

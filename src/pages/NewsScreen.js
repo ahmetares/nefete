@@ -51,7 +51,7 @@ function NewsScreen({navigation}) {
 
       return (
         <>
-        <Header title={'Bütün Haberler'} description={'Web3 dünyasındaki son gelişmeler'}/>
+        <Header title={'Tüm Haberler'} description={'Web3 dünyasındaki son gelişmeler'}/>
           <TabView
             navigationState={{index, routes}}
             renderScene={renderScene2}

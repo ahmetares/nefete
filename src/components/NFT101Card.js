@@ -60,7 +60,8 @@ const styles = StyleSheet.create({
         fontSize:18,
         marginTop:10,
         marginBottom:10,
-        flex:1
+        flex:1,
+        color:'black'
 
     },
 

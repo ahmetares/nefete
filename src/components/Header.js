@@ -37,9 +37,10 @@ function Header({title,description,color,border}) {
     title:{
         fontWeight:'bold',
         fontSize:23,
+        color:'black'
     },
     description:{
-        fontSize:12,
+        fontSize:14,
         color:'grey'
     }
   })

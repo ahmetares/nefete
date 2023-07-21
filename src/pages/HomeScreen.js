@@ -41,7 +41,7 @@ function HomeScreen({ navigation }) {
   const [loading, setLoading]  = useState(true)
 
   const  fetchHomePageNews = async () => {
-      const {data: newsList} = await axios.get(`http://localhost:5000/home-news`)
+      const {data: newsList} = await axios.get(`http://localhost:5000/home-news`)  // android 10.0.2.2 ios localhost
       const {data: NFT101} = await axios.get(`http://localhost:5000/home-nft101`)
 
       setHomeNews(newsList)   
@@ -70,7 +70,7 @@ function HomeScreen({ navigation }) {
 
   
 
-    <Header title={'Güncel haberler'} description={'Günün önemli haberleri'} />
+    <Header title={'Güncel haberler'} description={'NFT ve metaverse dünyasından önemli haberler'} />
 
     <TouchableWithoutFeedback onPress={toggleModal} style={styles.iconContainer}>
       <View style={styles.iconPosition} >
@@ -82,7 +82,7 @@ function HomeScreen({ navigation }) {
 
       <FlatList
       ItemSeparatorComponent={() => ( <View style={styles.seperator} />)} 
-      ListHeaderComponent={()=> <FirstNews news={homeNews[0]} />}
+      ListHeaderComponent={()=> <FirstNews news={homeNews[0]} navigation={navigation} />}
       ListFooterComponent={ <HomeNFT101 data={homeNft101} navigation={navigation} />}
       data={homeNews.slice(1)} 
       renderItem={({item}) => <NewsCard news={item} onClick={()=>navigateToNewsDetail(item)}/>} />

@@ -4,17 +4,18 @@ import { createSlice } from '@reduxjs/toolkit'
 export const generalSlice = createSlice({
   name: 'general',
   initialState: {
-    currentDrawer:'home',
+    currentPage:'Home',
     toggleDrawer: false,
     currentBottom:'home',
     backIconVisible:false
+    
 
   },
   reducers: {
     
 
-    setCurrentDrawer: (state,action) => {
-        state.currentDrawer=action.payload
+    setCurrentPage: (state,action) => {
+        state.currentPage=action.payload
     },
 
     setToggleDrawer: (state,action) => {
@@ -46,6 +47,6 @@ export const generalSlice = createSlice({
 
 
 
-export const { setCurrentDrawer,setToggleDrawer,setCurrentBottom,toggleDrawerFalse,toggleDrawerTrue,setBackIconVisible} = generalSlice.actions
+export const { setCurrentPage,setToggleDrawer,setCurrentBottom,toggleDrawerFalse,toggleDrawerTrue,setBackIconVisible} = generalSlice.actions
 
 export default generalSlice.reducer
