@@ -48,11 +48,15 @@ function NewsCategory({navigation,categoryName}) {
     }
 
     const loadMoreNews = () => {
+      if(!loading){
         return(
           setCurrentPage(currentPage+1)
         )
+      }
     }
 
+
+  
 
     return (
       <CustomLinearGradient>
@@ -62,10 +66,10 @@ function NewsCategory({navigation,categoryName}) {
                    ListHeaderComponent={()=> <View style={{marginBottom:20}}></View>}
                    ListFooterComponent={renderLoader}
                    keyExtractor={(item, index) => item.id.toString()}
-                   initialNumToRender={10}
+                   initialNumToRender={4}
                    onEndReached={loadMoreNews}
-                   onEndReachedThreshold={0}
-                  renderItem={({item}) => <NewsCard news={item} onClick={()=>navigateToNewsDetail(item)}/> } />
+                   onEndReachedThreshold={0.5}
+                  renderItem={ ({item}) => <NewsCard news={item} onClick={()=>navigateToNewsDetail(item)}/>} />
       </CustomLinearGradient>
     );
   }

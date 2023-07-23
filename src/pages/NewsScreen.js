@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import { useWindowDimensions} from 'react-native';
+import { useWindowDimensions,View} from 'react-native';
 import {TabView, TabBar, SceneMap} from 'react-native-tab-view';
 
 import NewsCategory from './NewsCategory';
@@ -51,7 +51,7 @@ function NewsScreen({navigation}) {
 
       return (
         <>
-        <Header title={'Tüm Haberler'} description={'Web3 dünyasındaki son gelişmeler'}/>
+        <Header header={'Haberler'} />
           <TabView
             navigationState={{index, routes}}
             renderScene={renderScene2}

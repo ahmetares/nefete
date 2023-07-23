@@ -14,6 +14,7 @@ import NFT101 from '../pages/NFT101';
 import Privacy from '../pages/Privacy';
 import NewsDetail from '../pages/NewsDetail';
 import NewsScreen from '../pages/NewsScreen';
+import Language from '../pages/Language';
 
 import GoBackButton from '../components/GoBackButton';
 import { setBackIconVisible, setCurrentPage } from '../store/generalSlice/generalSlice';
@@ -32,7 +33,10 @@ const Stack = createNativeStackNavigator();
          <Stack.Screen name="About" component={About}  />
          <Stack.Screen name="Privacy" component={Privacy}  />
          <Stack.Screen name="Setting" component={SettingsScreen}  />
+         <Stack.Screen name="Language" component={Language}  />
          <Stack.Screen name="NewsDetail" component={NewsDetail}  />
+      
+
         </Stack.Navigator>
       )
   }

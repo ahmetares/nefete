@@ -1,6 +1,7 @@
 import { StyleSheet, FlatList, View, Button, Text, TextInput, Image, Dimensions, TouchableOpacity } from "react-native";
 import Icon from "react-native-vector-icons/Feather"
 import DiscordIcon from 'react-native-vector-icons/Fontisto'
+import DrawerTopComponent from "./DrawerTopComponent";
 
 function SocialMediaComponent({ name, color, iconName }) {
     
@@ -62,6 +63,19 @@ function SocialMedia() {
             imgLink: require('../assets/socialmedia/linkedin.png'),
             iconName: 'linkedin',
 
+        },
+        {
+            name: 'Twitter',
+            color: '#00acee',
+            imgLink: require('../assets/socialmedia/twitter.png'),
+            iconName: 'twitter'
+        },
+
+        {
+            name: 'Instagram',
+            color: '#e200d8',
+            imgLink: require('../assets/socialmedia/instagram.png'),
+            iconName: 'instagram',
         },
 
         

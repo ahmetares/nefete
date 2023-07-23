@@ -35,7 +35,7 @@ function NFT101({navigation}) {
     return (
       
       <CustomLinearGradient>
-        <Header title={'NFT 101'} description={'Web3 dünyasının tüm detaylarını öğren'} />
+      <Header header={'NFT101'}  />
         <FlatList data={nft101News} 
           keyExtractor={item => "_" + item.id}
 

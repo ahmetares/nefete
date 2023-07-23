@@ -3,13 +3,12 @@ import Modal from 'react-native-modal'
 const deviceSize = Dimensions.get('window')
 import React from 'react'
 import { SlideInLeft, SlideInRight } from "react-native-reanimated";
-import {  setBackIconVisible, toggleDrawerFalse, toggleDrawerTrue } from "../../store/generalSlice/generalSlice";
 import { useDispatch } from "react-redux";
-import SocialMedia from "../SocialMedia";
+import { setBackIconVisible,toggleDrawerFalse } from "../store/generalSlice/generalSlice";
 
 
 {/*modaldaki on closelar modalın kapanması ile alakalı onbackbutton androide özel */}
-const DrawerModal  = ({visible, onClose, onSend, navigation}) => {
+const DrawerTopComponent  = ({navigation}) => {
 
     const dispatch = useDispatch()
     const navigate = (to) => {
@@ -23,20 +22,7 @@ const DrawerModal  = ({visible, onClose, onSend, navigation}) => {
 
     return (
 
-        <Modal 
-        style={styles.modal}
-        isVisible={visible}
-        onSwipeComplete={onClose}
-        onBackdropPress={onClose}
-        onBackButtonPress={onClose}
-        animationIn="slideInLeft"
-        animationOut="slideOutLeft"
-        swipeThreshold={100}
-        percentageShown={100}
-        swipeDirection="left"
-        propagateSwipe
 
-        > 
         <View style={styles.container } >
 
   
@@ -61,9 +47,8 @@ const DrawerModal  = ({visible, onClose, onSend, navigation}) => {
                 <View style={styles.seperator} />
 
 
-                <TouchableOpacity style={styles.optionsWrapperLanguage} onPress={()=> {navigate('Language')}}>
-                    <Text style={styles.optionTextLanguage}>dil </Text>
-                    <Image style={styles.logo2} source = {require('../../assets/images/turkey.svg.png')}/>
+                <TouchableOpacity style={styles.optionsWrapper} onPress={()=> {navigate('Privacy')}}>
+                    <Text style={styles.optionText}>gizlilik politikası</Text>
                 </TouchableOpacity>
 
                 <View style={styles.seperator} />
@@ -76,16 +61,9 @@ const DrawerModal  = ({visible, onClose, onSend, navigation}) => {
 
 
              </View> 
-
             </View>
-            <View style={styles.socialMediaContainer} >
-            <SocialMedia/>
-
-            </View>
-
         </View>
 
-        </Modal>
 
 
 
@@ -113,22 +91,22 @@ const styles = StyleSheet.create({
         resizeMode:'contain'
     },
     logo2:{
+        position:'absolute',
+        top:5,
+        left:5,
         width:40,
-        height:25,
-        marginRight:10
+        height:25
     },
     wrapper: {
         padding:20,
         width:deviceSize.width/1.55,
 
     },
+    options: {
+    },
     optionsWrapper:{
         width:'100%',
 
-    },
-    optionsWrapperLanguage:{
-        width:'100%',
-        flexDirection:'row'
     },
     optionText:{
         fontSize:20,
@@ -136,13 +114,6 @@ const styles = StyleSheet.create({
         textAlign:'left',
         marginLeft:5
 
-    },
-    optionTextLanguage:{
-        fontSize:20,
-        color:'grey',
-        textAlign:'left',
-        marginLeft:5,
-        flex:1
     },
     input_container:{
         flex:1,
@@ -169,4 +140,4 @@ const styles = StyleSheet.create({
     
 })
 
-export default DrawerModal
+export default DrawerTopComponent

@@ -6,6 +6,8 @@ import { BlurView, VibrancyView } from "@react-native-community/blur";
 import Ionicon from 'react-native-vector-icons/Ionicons'
 import CustomLinearGradient from '../components/CustomLinearGradient';
 import axios from 'axios';
+import { useTranslation } from 'react-i18next';
+import i18next from "../services/i18next"
 
 import DrawerModal from '../components/modals/DrawerModal';
 import Header from '../components/Header';
@@ -15,6 +17,10 @@ import HomeNFT101 from '../components/HomeNFT101';
 
 
 function HomeScreen({ navigation }) {
+
+
+  const {t} = useTranslation()
+
   const dispatch = useDispatch()
   const drawerStatus = useSelector((state) => state.general.toggleDrawer)
 
@@ -70,7 +76,7 @@ function HomeScreen({ navigation }) {
 
   
 
-    <Header title={'Güncel haberler'} description={'NFT ve metaverse dünyasından önemli haberler'} />
+    <Header header={'Anasayfa'} />
 
     <TouchableWithoutFeedback onPress={toggleModal} style={styles.iconContainer}>
       <View style={styles.iconPosition} >

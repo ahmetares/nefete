@@ -1,6 +1,6 @@
 import 'react-native-gesture-handler';
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
   StyleSheet,
   Text,
@@ -13,9 +13,14 @@ import Router2 from './src/router/Router2';
 
 import { store } from './src/store/store.js';
 import { Provider } from 'react-redux'
-
+import "./src/services/i18next"
+import SplashScreen from 'react-native-splash-screen';
 
 const  App = () => {
+
+  useEffect(()=> {
+    SplashScreen.hide()
+  },[])
 
 
   return (
