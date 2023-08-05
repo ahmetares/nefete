@@ -6,5 +6,33 @@
     "news-header-description": "Web3 dünyasından son gelişmeler",
 
     "nft101-header-title": "NFT 101",
-    "nft101-header-description": "NFT ve metaverse dünyası artık daha kolay"
+    "nft101-header-description": "NFT ve metaverse dünyası artık daha kolay",
+
+    "homenft101-header-title": "NFT 101",
+
+    "homepage-read-all-news": "Tüm haberleri incele",
+    "homepage-read-all-NFT101": "Tüm NFT 101'leri incele",
+
+    "drawer-about": "hakkımızda",
+    "drawer-language": "dil",
+    "drawer-privacy": "gizlilik politikası",
+
+    "about-header": "Hakkımızda",
+    "about1": "Nefete, NFT ve Metaverse alanını büyütmek isteyen bir haber platformudur. Gelişen dijital dünyada, NFT'ler ve Metaverse kavramları büyük ilgi görmektedir. Nefete, bu heyecan verici yeni deneyimleri ve teknolojileri takip ederek, okuyucularına en güncel bilgileri sunmayı hedeflemektedir.",
+    "about2": "Nefete, NFT'lerin ve Metaverse'in birbirleriyle nasıl etkileşimde olduğunu, bu teknolojilerin, sanat, eğlence, ticaret ve diğer alanlardaki potansiyelini araştırmaktadır. Haber platformu, sanatçıların NFT'ler aracılığıyla eserlerini nasıl satabileceğini, oyun dünyasının nasıl Metaverse'e entegre olduğunu, dijital ticaretin nasıl bir dönüşüm geçirdiğini ve Metaverse'in gelecekte nasıl şekilleneceğini ele almaktadır.",
+    "about3": "Aynı zamanda Nefete, okuyucularına bu heyecan verici alanları anlatırken, yeni projeleri, işbirliklerini ve teknolojik gelişmeleri de aktarmaktadır. Örneğin, NFT'lerin müzik endüstrisindeki kullanımını, sanat dünyasında gerçekleşen dijital sergileri veya Metaverse üzerindeki büyüyen dijital ekonomiyi incelemektedir. Bu şekilde, Nefete okuyucularına NFT ve Metaverse dünyasında yaşanan ilgi çekici olayları, yeni fırsatları ve gelecek trendlerini takip etme imkanı sunmaktadır.",
+
+    "tabbar-home": "Anasayfa",
+    "tabbar-news": "Haberler",
+    "tabbar-NFT101": "NFT101",
+    "tabbar-Market": "Market",
+
+    "allNews-category": "Tüm Haberler",
+    "NFT-category": "NFT",
+    "metaverse-category": "Metaverse",
+    "music-category": "Müzik",
+    "gaming-category": "Oyun"
+
+
+
 }

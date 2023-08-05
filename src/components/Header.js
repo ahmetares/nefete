@@ -22,7 +22,7 @@ function Header({header,color,border}) {
        setTitle('news-header-title')
        setDesc('news-header-description')
    }
-   if(header == 'NFT101'){
+   if(header == 'NFT101' || header ==  'HomeNFT101'){
     setTitle('nft101-header-title')
     setDesc('nft101-header-description')
    }

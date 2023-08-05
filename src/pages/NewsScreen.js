@@ -5,8 +5,13 @@ import {TabView, TabBar, SceneMap} from 'react-native-tab-view';
 import NewsCategory from './NewsCategory';
 import Header from '../components/Header';
 
+import { useTranslation } from 'react-i18next';
+
 
 function NewsScreen({navigation}) {
+
+  const {t} = useTranslation()
+
 
     const renderScene2 = ({ route }) => {
         switch (route.key) {
@@ -29,11 +34,11 @@ function NewsScreen({navigation}) {
 
       const [index, setIndex] = React.useState(0);
       const [routes] = React.useState([
-        {key: 'first', title: 'Tüm Haberler'},
-        {key: 'second', title: 'NFT'},
-        {key: 'third', title: 'Metaverse'},
-        {key: 'fourth', title: 'Music'},
-        {key: 'fifth', title: 'Gaming'},
+        {key: 'first', title: t('allNews-category')},
+        {key: 'second', title:  t('NFT-category')},
+        {key: 'third', title:  t('metaverse-category')},
+        {key: 'fourth', title:  t('music-category')},
+        {key: 'fifth', title:  t('gaming-category')},
       ]);
 
 

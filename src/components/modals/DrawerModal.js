@@ -1,15 +1,21 @@
 import { StyleSheet, View,Button, Text,Linking, TextInput,Image,Dimensions,TouchableOpacity, ScrollView } from "react-native";
 import Modal from 'react-native-modal'
-const deviceSize = Dimensions.get('window')
 import React from 'react'
 import { SlideInLeft, SlideInRight } from "react-native-reanimated";
 import {  setBackIconVisible, toggleDrawerFalse, toggleDrawerTrue } from "../../store/generalSlice/generalSlice";
 import { useDispatch } from "react-redux";
+import { useTranslation } from 'react-i18next';
+
+
 import SocialMedia from "../SocialMedia";
+const deviceSize = Dimensions.get('window')
 
 
 {/*modaldaki on closelar modalın kapanması ile alakalı onbackbutton androide özel */}
 const DrawerModal  = ({visible, onClose, onSend, navigation}) => {
+
+    const {t} = useTranslation()
+
 
     const dispatch = useDispatch()
     const navigate = (to) => {
@@ -55,21 +61,21 @@ const DrawerModal  = ({visible, onClose, onSend, navigation}) => {
 
 
                 <TouchableOpacity style={styles.optionsWrapper} onPress={()=> navigate('About')}>
-                    <Text style={styles.optionText}>hakkımızda</Text>
+                    <Text style={styles.optionText}>{t('drawer-about')}</Text>
                 </TouchableOpacity>
 
                 <View style={styles.seperator} />
 
 
                 <TouchableOpacity style={styles.optionsWrapperLanguage} onPress={()=> {navigate('Language')}}>
-                    <Text style={styles.optionTextLanguage}>dil </Text>
-                    <Image style={styles.logo2} source = {require('../../assets/images/turkey.svg.png')}/>
+                    <Text style={styles.optionTextLanguage}>{t('drawer-language')} </Text>
+                   { /* <Image style={styles.logo2} source = {require('../../assets/images/usa.svg.png')}/> */ }
                 </TouchableOpacity>
 
                 <View style={styles.seperator} />
 
                 <TouchableOpacity style={styles.optionsWrapper} onPress={()=> {navigate('Privacy')}}>
-                    <Text style={styles.optionText}>gizlilik politikası</Text>
+                    <Text style={styles.optionText}>{t('drawer-privacy')} </Text>
                 </TouchableOpacity>
 
                 
@@ -95,6 +101,8 @@ const DrawerModal  = ({visible, onClose, onSend, navigation}) => {
 
 
 const styles = StyleSheet.create({
+
+   
     
     container: {
         backgroundColor:'white',
@@ -103,7 +111,6 @@ const styles = StyleSheet.create({
         width:deviceSize.width/1.55,
         borderRadius:10,
         alignItems:'center',
-
 
     },
     logo:{

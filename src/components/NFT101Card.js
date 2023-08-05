@@ -3,6 +3,7 @@ import { Text, Dimensions,TouchableOpacity,Image,View,StyleSheet } from 'react-n
 import { setCurrentDrawer } from '../store/generalSlice/generalSlice';
 import { useSelector, useDispatch } from 'react-redux'
 import truncate from '../helper/textTruncate';
+import FastImage from 'react-native-fast-image';
 
 function NFT101Card({nft101,onClick}) {
 
@@ -16,7 +17,7 @@ function NFT101Card({nft101,onClick}) {
         <TouchableOpacity style={styles.container} onPress={onClick}>
 
             <View style={styles.nft101Container}>
-                <Image style={styles.image} source={{uri:`https://nefete.com.tr/${nft101.thumbnail}` }} />
+                <FastImage style={styles.image} source={{uri:`https://nefete.com.tr/${nft101.thumbnail}` }} />
 
                 <View style={styles.textsContainer}>
                     <Text style={styles.title}> {nft101.title} </Text>

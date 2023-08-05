@@ -28,13 +28,14 @@ LANGUAGE_DETECTOR = {
         } else {
           console.log('No language is set, choosing English as fallback');
         }
-      /*   bu kod sanırım telenfonun diline göre ayarlama yapıyo ama ilk açılışta hata verdiği için sildik
-          const findBestAvailableLanguage =
-          RNLocalize.findBestAvailableLanguage(LANG_CODES);
+        // bu kod sanırım telenfonun diline göre ayarlama yapıyo 
+        //ama ilk açılışta RNLocalize.findBestAvailableLanguage(LANG_CODES) hata verdiği için sildik
+          const findBestAvailableLanguage = null 
+         //  RNLocalize.findBestAvailableLanguage(LANG_CODES) ? RNLocalize.findBestAvailableLanguage(LANG_CODES) : 'en';
 
-        callback(findBestAvailableLanguage? findBestAvailableLanguage.languageTag : 'en'); */
+         callback(findBestAvailableLanguage? findBestAvailableLanguage.languageTag : 'en'); 
 
-        callback('en');
+     //   callback('en');
         return;
       }
       callback(language);

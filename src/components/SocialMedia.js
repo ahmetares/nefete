@@ -64,26 +64,14 @@ function SocialMedia() {
             iconName: 'linkedin',
 
         },
-        {
-            name: 'Twitter',
-            color: '#00acee',
-            imgLink: require('../assets/socialmedia/twitter.png'),
-            iconName: 'twitter'
-        },
-
-        {
-            name: 'Instagram',
-            color: '#e200d8',
-            imgLink: require('../assets/socialmedia/instagram.png'),
-            iconName: 'instagram',
-        },
+  
 
         
 
     ]
 
     return (
-        <View style={{flex:1}}>
+        <View >
             <FlatList
                 data={SocialMediaAccounts}
                 numColumns={2}

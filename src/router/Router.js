@@ -4,6 +4,10 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { useSelector,useDispatch } from 'react-redux'
 import { useRoute,useIsFocused } from '@react-navigation/native';
+import MCIcon from "react-native-vector-icons/MaterialCommunityIcons"
+import EntIcon from "react-native-vector-icons/Entypo"
+import { useTranslation } from 'react-i18next';
+
 
 import HomeScreen from '../pages/HomeScreen';
 import About from '../pages/About';
@@ -18,6 +22,8 @@ import Language from '../pages/Language';
 
 import GoBackButton from '../components/GoBackButton';
 import { setBackIconVisible, setCurrentPage } from '../store/generalSlice/generalSlice';
+import { useEffect } from 'react';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -44,7 +50,7 @@ const Stack = createNativeStackNavigator();
   const Newstack = () => {
   
     return(
-      <Stack.Navigator screenOptions={{headerShown:false}} >
+      <Stack.Navigator initialRouteName='News' screenOptions={{headerShown:false}} >
          <Stack.Screen name="News" component={NewsScreen}  />
          <Stack.Screen name="NewsDetail" component={NewsDetail}  />
 
@@ -73,12 +79,10 @@ const Stack = createNativeStackNavigator();
 
   function TabNavigator({navigation}) {
 
-
-
-   
-
     const dispatch = useDispatch()
+    const {t} = useTranslation()
 
+  
     return (
     <Tab.Navigator screenOptions={{headerShown:false,tabBarStyle:{zIndex:1},}} >
 
@@ -89,6 +93,12 @@ const Stack = createNativeStackNavigator();
         dispatch(setBackIconVisible(false))
         dispatch(setCurrentPage('Home'))
       },     
+    }}
+    options={{
+      tabBarLabel:t('tabbar-home'),
+      tabBarIcon: ({focused}) => {
+        return  <MCIcon name={'home'} size={20} color={focused ? 'black' : 'grey'} />  
+      }
     }} />
 
     <Tab.Screen name="Haberler"component={Newstack} listeners={{
@@ -96,20 +106,41 @@ const Stack = createNativeStackNavigator();
         dispatch(setBackIconVisible(false))
         dispatch(setCurrentPage('News'))
       },     
+    }}
+    options={{
+      tabBarLabel:t('tabbar-news'),
+      tabBarIcon: ({focused}) => {
+        return  <MCIcon name='newspaper-variant-outline' size={20} color={focused ? 'black' : 'grey'} />
+      }
     }} />
+
+
     <Tab.Screen name="NFT 101" component={NFT101Stack} listeners={{
       tabPress: () => {
         dispatch(setBackIconVisible(false))
         dispatch(setCurrentPage('NFT101Stack'))
 
       },     
+    }}
+    options={{
+      tabBarIcon: ({focused}) => {
+        return <MCIcon name='book' size={20} color={focused ? 'black' : 'grey'} />  
+      }
     }}  /> 
+
     <Tab.Screen name="Market" component={MarketStack} listeners={{
       tabPress: () => {
         dispatch(setBackIconVisible(false))
         dispatch(setCurrentPage('MarketStack'))
 
       },     
+    }} options={{
+      tabBarIcon: ({focused}) => {
+        
+        return (
+          <EntIcon name='bar-graph' size={20} color={focused ? 'black' : 'grey'} />
+        )
+      }
     }} />
 
   </Tab.Navigator>

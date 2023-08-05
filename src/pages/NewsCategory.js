@@ -4,25 +4,32 @@ import axios from 'axios';
 
 import NewsCard from '../components/NewsCard';
 import CustomLinearGradient from '../components/CustomLinearGradient';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { FlashList } from '@shopify/flash-list';
 
 function NewsCategory({navigation,categoryName}) {
 
 
-    const [loading, setLoading]  = useState(false)
+    const [loading, setLoading]  = useState(true)
     const [news,setNews] = useState([])
     const [currentPage,setCurrentPage] = useState(1)
 
 
+ 
+
+
+
+   
+    
+
     const  renderCategory = async () => {
-      setLoading(true);
 
-      let response;
-      if (categoryName === 'all') {
-        response = await axios.get(`http://localhost:5000/news/${currentPage}`);
-      } else{
-        response = await axios.get(`http://localhost:5000/category/${categoryName}-news/${currentPage}`);
-      }
+      const apiUrl =
+      categoryName === 'all'
+            ? `http://localhost:5000/news/${currentPage}`
+            : `http://localhost:5000/category/${categoryName}-news/${currentPage}`;
 
+        const response = await axios.get(apiUrl);
         const newData = response.data;
         setNews(prevNews => [...prevNews, ...newData]);
         setLoading(false);
@@ -60,14 +67,12 @@ function NewsCategory({navigation,categoryName}) {
 
     return (
       <CustomLinearGradient>
-        <FlatList data={news} 
-                  ItemSeparatorComponent={() => (
-                  <View style={styles.seperator} />)} 
+        <FlashList data={news} 
+                  ItemSeparatorComponent={() => ( <View style={styles.seperator} />)} 
                    ListHeaderComponent={()=> <View style={{marginBottom:20}}></View>}
                    ListFooterComponent={renderLoader}
-                   keyExtractor={(item, index) => item.id.toString()}
-                   initialNumToRender={4}
                    onEndReached={loadMoreNews}
+                   estimatedItemSize={100}
                    onEndReachedThreshold={0.5}
                   renderItem={ ({item}) => <NewsCard news={item} onClick={()=>navigateToNewsDetail(item)}/>} />
       </CustomLinearGradient>

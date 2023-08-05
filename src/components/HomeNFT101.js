@@ -3,6 +3,7 @@ import { Text, View,Button,FlatList,TouchableOpacity, StyleSheet } from 'react-n
 import { setCurrentDrawer } from '../store/generalSlice/generalSlice';
 import { useSelector, useDispatch } from 'react-redux'
 import AntIcon from 'react-native-vector-icons/AntDesign'
+import { useTranslation } from 'react-i18next';
 
 import NFT101Card from './NFT101Card';
 import Header from './Header';
@@ -10,6 +11,9 @@ import Header from './Header';
 
 function HomeNFT101({navigation,data}) {
 
+  const {t} = useTranslation()
+
+  //teke düşür
 
   const navigationToAllNews = () => {
     navigation.navigate('Haberler')
@@ -28,7 +32,7 @@ function HomeNFT101({navigation,data}) {
         <TouchableOpacity onPress={navigationToAllNews}>
           <View style={styles.buttonWrapper}>
        
-        <Text style={styles.buttonTitle}>Tüm haberleri incele</Text>
+        <Text style={styles.buttonTitle}>{t('homepage-read-all-news')}</Text>
        
         <View style={styles.iconWrapper}>
         <AntIcon name='arrowright' size={19} />
@@ -37,25 +41,23 @@ function HomeNFT101({navigation,data}) {
           </View>
         </TouchableOpacity>
 
-        <Header title={'NFT 101'} color={{backgroundColor:'transparent'}} border={{borderWidth:0}} description={'Web 3 dünyasındaki ayrıntıları kaçırma'}/>
+        <Header header={'HomeNFT101'} color={{backgroundColor:'transparent'}} border={{borderWidth:0}}/>
 
         <FlatList 
         data={data} 
         keyExtractor={item => "_" + item.id}
         renderItem={({item}) => <NFT101Card nft101={item} onClick={() => navigateToNewsDetail(item)}/>} 
-        ListFooterComponent={ <></>}
         />
 
     <TouchableOpacity onPress={navigationToNFT101}>
-          <View style={styles.buttonWrapper}>
-       
-        <Text style={styles.buttonTitle}> Tüm NFT 101'leri incele</Text>
-       
-        <View style={styles.iconWrapper}>
-        <AntIcon name='arrowright' size={19} />
+     
+        <View style={styles.buttonWrapper}>
+          <Text style={styles.buttonTitle}> {t('homepage-read-all-NFT101')}</Text>
+         <View style={styles.iconWrapper}>
+          <AntIcon name='arrowright' size={19} />
+         </View> 
         </View>
-         
-          </View>
+
         </TouchableOpacity>
 
 

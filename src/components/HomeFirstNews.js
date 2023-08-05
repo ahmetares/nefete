@@ -1,7 +1,21 @@
 import { View,Text, StyleSheet, Image,TouchableOpacity, Dimensions } from "react-native";
-
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { useState,useEffect } from "react";
+import FastImage from "react-native-fast-image";
 
 function HomeFirstNews({news,navigation}) {
+
+    const [lang,setLang] = useState('')
+
+    const findLanguage = () => {
+      const lang = AsyncStorage.getItem('user-language').
+      then((res) => 
+      setLang(res))
+     }
+ 
+     useEffect(()=> {
+       findLanguage()
+     },[lang])
 
     const navigateToNewsDetail = (item) => {
         navigation.navigate('NewsDetail', {item})
@@ -13,12 +27,12 @@ function HomeFirstNews({news,navigation}) {
 
             <View style={styles.newsContainer}>
                 <View style={styles.imageContainer}>
-                <Image style={styles.image} source={{uri:`https://nefete.com.tr/${news.thumbnail}` }} />
+                <FastImage style={styles.image} source={{uri:`https://nefete.com.tr/${news.thumbnail}`}}  />
                 </View>
 
                 <View style={styles.textsContainer}>
-                    <Text style={styles.title}> {news.title} </Text>
-                    <Text style={styles.subtitle}> {news.sub_title} </Text>
+                    <Text style={styles.title}> {lang ==='tr' ? news.title : news.titleen} </Text>
+                    <Text style={styles.subtitle}> {lang ==='tr' ? news.sub_title : news.sub_titleen} </Text>
                 </View>
             </View>
 

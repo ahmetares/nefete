@@ -6,5 +6,37 @@
     "news-header-description": "Latest details from the web3 world",
 
     "nft101-header-title": "NFT 101",
-    "nft101-header-description": "NFT and metaverse world made easy"
+    "nft101-header-description": "NFT and metaverse world made easy",
+
+    "homenft101-header-title": "NFT 101",
+
+    "homepage-read-all-news": "View all news",
+    "homepage-read-all-NFT101": "View all NFT101",
+
+    "drawer-about": "about us",
+    "drawer-language": "language",
+    "drawer-privacy": "privacy policy",
+
+    "about-header": "About Us",
+    "about1":"Nefete is a news platform that wants to grow the NFT and Metaverse space. In the evolving digital world, NFTs and Metaverse concepts are gaining a lot of attention. Nefete aims to follow these exciting new experiences and technologies and provide its readers with the most up-to-date information.",
+    "about2":"Nefete explores how NFTs and the Metaverse interact with each other and the potential of these technologies in art, entertainment, commerce and other fields. The news platform explores how artists can sell their work through NFTs, how gaming is integrated into the Metaverse, how digital commerce is transforming, and how the Metaverse will be shaped in the future.",
+    "about3":"At the same time, Nefete introduces its readers to these exciting fields and reports on new projects, collaborations and technological developments. For example, it explores the use of NFTs in the music industry, digital exhibitions in the art world or the growing digital economy in the Metaverse. In this way, Nefete offers its readers the opportunity to follow interesting events, new opportunities and future trends in the world of NFTs and the Metaverse.",
+
+    "tabbar-home": "Home",
+    "tabbar-news": "News",
+    "tabbar-NFT101": "NFT101",
+    "tabbar-Market": "Market",
+
+
+    "allNews-category": "All News",
+    "NFT-category": "NFT",
+    "metaverse-category": "Metaverse",
+    "music-category": "Music",
+    "gaming-category": "Gaming"
+
+    
+
+
+
+
 }

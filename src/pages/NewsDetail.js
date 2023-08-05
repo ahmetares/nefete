@@ -4,19 +4,38 @@ import { setCurrentDrawer,setBackIconVisible } from '../store/generalSlice/gener
 import { useSelector, useDispatch } from 'react-redux'
 import RenderHtml from 'react-native-render-html';
 import { NavigationContainer,useNavigation,useIsFocused } from '@react-navigation/native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import FastImage from 'react-native-fast-image';
 
 import formatDate from '../helper/dateFormatter';
 import CustomLinearGradient from '../components/CustomLinearGradient';
 
 
+const renderersProps = {
+  img: {
+    enableExperimentalPercentWidth: true,
+  }
+};
+
+
 function NewsDetail({route,navigation}) {
 
-
-    const {title,details,thumbnail,created_at} = route.params.item
+    const [lang,setLang] = useState('')
+    const {title,titleen,detailsen,details,thumbnail,created_at} = route.params.item
 
     const date = formatDate(created_at)
     const dispatch = useDispatch()
 
+    //KÖTÜ çözüm geç geliyo vs bu kısımdan halletmemek daha iyi
+    const findLanguage = () => {
+     const lang = AsyncStorage.getItem('user-language').
+     then((res) => 
+     setLang(res))
+    }
+
+    useEffect(()=> {
+      findLanguage()
+    },[lang])
 
   /*   API ye istek atmak yerine parametre vererek gönderince daha hızlı oldu. (resimler yine istek webe istek atıyor.)
      
@@ -42,28 +61,24 @@ function NewsDetail({route,navigation}) {
        
       }, [])
 
-    
+      const renderingLang = lang =='tr' ? details:detailsen
 
       const source = {
-        html: details
+        html: renderingLang
       };
       
 
       const { width } = useWindowDimensions();
 
 
-      const renderersProps = {
-        img: {
-          enableExperimentalPercentWidth: true,
-        }
-      };
+    
 
 
     return (
         <CustomLinearGradient>
       <ScrollView style={{ flex: 1}}>
 
-      <Text style= {styles.title}>{title}</Text>
+      <Text style= {styles.title}>{lang==='tr' ? title : titleen}</Text>
 
       <View style={{justifyContent:'flex-end', alignItems:'flex-end'}}>
       <Text style= {styles.date}>{date}</Text>
@@ -71,7 +86,7 @@ function NewsDetail({route,navigation}) {
 
 
         <View style={styles.imageContainer}>
-         <Image style={styles.image} source={{uri:`https://nefete.com.tr/${thumbnail}`}} />
+         <FastImage style={styles.image} source={{uri:`https://nefete.com.tr/${thumbnail}`}} />
         </View>
 
 
