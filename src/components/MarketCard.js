@@ -149,15 +149,15 @@ function MarketList(props) {
     },
     index:{
         position:'absolute',
-        top:10,
-        left:10,
+        top:-10,
+        left:0,
         fontWeight:'bold',
         fontSize:20,
         color:'black',
     },
     info:{
         fontWeight:'bold',
-        fontSize:20,
+        fontSize:15,
         color:'black',
         marginBottom:7
     },
@@ -192,7 +192,7 @@ function MarketList(props) {
     },
 
     priceChange:{
-        fontSize:20,
+        fontSize:15,
 
     },
     header:{

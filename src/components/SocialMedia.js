@@ -1,7 +1,6 @@
 import { StyleSheet, Linking,FlatList, View, Button, Text, TextInput, Image, Dimensions, TouchableOpacity } from "react-native";
 import Icon from "react-native-vector-icons/Feather"
 import DiscordIcon from 'react-native-vector-icons/Fontisto'
-import DrawerTopComponent from "./DrawerTopComponent";
 
 function SocialMediaComponent({ name, color, iconName,url }) {
 

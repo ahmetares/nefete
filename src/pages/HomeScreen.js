@@ -79,13 +79,13 @@ function HomeScreen({ navigation }) {
 
     <Header header={'Anasayfa'} />
 
-    <TouchableWithoutFeedback onPress={toggleModal} style={styles.iconContainer}>
+      <TouchableWithoutFeedback onPress={toggleModal} style={styles.iconContainer}>
       <View style={styles.iconPosition} >
       <View style={styles.iconWrapper}>
       <Ionicon  size={30} name='ios-menu-sharp'  color={'black'} style={styles.icon}/>
-     </View>
-     </View>
-     </TouchableWithoutFeedback>
+      </View>
+      </View>
+      </TouchableWithoutFeedback>
 
       <FlatList
       ItemSeparatorComponent={() => ( <View style={styles.seperator} />)} 
@@ -118,8 +118,8 @@ const styles=  StyleSheet.create({
   iconWrapper:{
     marginVertical:5,
     backgroundColor:'white',
-    width:50,
-    height:50,
+    width:30,
+    height:30,
     display:'flex',
     alignItems:'center',
     justifyContent:'center',

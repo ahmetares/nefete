@@ -19,7 +19,6 @@ const DrawerModal  = ({visible, onClose, onSend, navigation}) => {
 
     const dispatch = useDispatch()
     const navigate = (to) => {
-        console.log(to)
         navigation.navigate(to)
         dispatch(toggleDrawerFalse())
         dispatch(setBackIconVisible(true))

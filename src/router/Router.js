@@ -11,8 +11,6 @@ import { useTranslation } from 'react-i18next';
 
 import HomeScreen from '../pages/HomeScreen';
 import About from '../pages/About';
-import News from '../pages/News';
-import SettingsScreen from '../pages/Setting';
 import Market from '../pages/Market';
 import NFT101 from '../pages/NFT101';
 import Privacy from '../pages/Privacy';
@@ -22,8 +20,6 @@ import Language from '../pages/Language';
 
 import GoBackButton from '../components/GoBackButton';
 import { setBackIconVisible, setCurrentPage } from '../store/generalSlice/generalSlice';
-import { useEffect } from 'react';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -38,7 +34,6 @@ const Stack = createNativeStackNavigator();
          <Stack.Screen name="Home" component={HomeScreen}  />
          <Stack.Screen name="About" component={About}  />
          <Stack.Screen name="Privacy" component={Privacy}  />
-         <Stack.Screen name="Setting" component={SettingsScreen}  />
          <Stack.Screen name="Language" component={Language}  />
          <Stack.Screen name="NewsDetail" component={NewsDetail}  />
       

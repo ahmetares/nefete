@@ -31,10 +31,8 @@ function Language({navigation}) {
        findLanguage()
        if(lang=='tr') setLangExtended('Türkçe')
        else setLangExtended('English')
-       console.log(lang)
      },[lang])
 
-     console.log(lang)
 
 
   

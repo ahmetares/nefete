@@ -1,9 +1,10 @@
 import {useState,useEffect} from 'react'
 import { Text, View,Button,FlatList,TouchableOpacity, StyleSheet } from 'react-native';
-import { setCurrentDrawer } from '../store/generalSlice/generalSlice';
+import { setCurrentDrawer,setCurrentPage } from '../store/generalSlice/generalSlice';
 import { useSelector, useDispatch } from 'react-redux'
 import AntIcon from 'react-native-vector-icons/AntDesign'
 import { useTranslation } from 'react-i18next';
+
 
 import NFT101Card from './NFT101Card';
 import Header from './Header';
@@ -12,14 +13,17 @@ import Header from './Header';
 function HomeNFT101({navigation,data}) {
 
   const {t} = useTranslation()
+  const dispatch = useDispatch()
 
   //teke düşür
 
   const navigationToAllNews = () => {
     navigation.navigate('Haberler')
+    dispatch(setCurrentPage('News'))
   }
   const navigationToNFT101 = () => {
     navigation.navigate('NFT 101')
+    dispatch(setCurrentPage('NFT101Stack'))
   }
 
   const navigateToNewsDetail = (item) => {

@@ -9,8 +9,6 @@ import {
   Dimensions
 } from 'react-native';
 import Router from './src/router/Router';
-import Router2 from './src/router/Router2';
-
 import { store } from './src/store/store.js';
 import { Provider } from 'react-redux'
 import "./src/services/i18next"
