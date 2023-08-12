@@ -21,7 +21,8 @@ function NewsCard({news,onClick}) {
        findLanguage()
      },[lang])
 
-
+    
+  
 
   
 

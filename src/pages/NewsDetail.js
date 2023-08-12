@@ -18,6 +18,7 @@ const renderersProps = {
 };
 
 
+
 function NewsDetail({route,navigation}) {
 
     const [lang,setLang] = useState('')
@@ -56,22 +57,19 @@ function NewsDetail({route,navigation}) {
       const isFocused = useIsFocused();
 
       useEffect(() => {
-        
        dispatch(setBackIconVisible(true))
-       
       }, [])
 
-      const renderingLang = lang =='tr' ? details:detailsen
 
+
+
+      const renderingLang = lang =='tr' ? details:detailsen
       const source = {
         html: renderingLang
       };
       
 
       const { width } = useWindowDimensions();
-
-
-    
 
 
     return (
@@ -91,7 +89,7 @@ function NewsDetail({route,navigation}) {
 
 
         <View style={styles.detail}>
-        <RenderHtml contentWidth={width} source={source || '' } 
+        <RenderHtml contentWidth={width} tagsStyles={styles.tagsStyles} source={source || '' } 
         renderersProps={renderersProps} /> 
         </View>
 
@@ -122,7 +120,8 @@ function NewsDetail({route,navigation}) {
       marginHorizontal:5,
       marginTop:'5%',
       display:'flex',
-      padding:7
+      padding:7,
+      color:'black'
 
     },
 
@@ -133,10 +132,18 @@ function NewsDetail({route,navigation}) {
      
     },
 
+    tagsStyles:{
+      p: {color:'black',fontSize:16},
+      h3:{color:'black'},
+      h2:{color:'black'},
+      h1:{color:'black'},
+
+    },
+
     detail:{
       marginBottom:'5%',
       marginHorizontal:7,
-      fontSize: 23
+      fontSize: 23,
     }
     
   })

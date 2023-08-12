@@ -1,10 +1,9 @@
-import {useState,useEffect,useRef} from 'react'
-import { Text, View,Button,FlatList, StyleSheet, ActivityIndicator} from 'react-native';
+import {useState,useEffect,useRef,useCallback} from 'react'
+import { Text, View,Button,FlatList, RefreshControl, StyleSheet, ActivityIndicator} from 'react-native';
 import axios from 'axios';
 
 import NewsCard from '../components/NewsCard';
 import CustomLinearGradient from '../components/CustomLinearGradient';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import { FlashList } from '@shopify/flash-list';
 
 function NewsCategory({navigation,categoryName}) {
@@ -14,25 +13,41 @@ function NewsCategory({navigation,categoryName}) {
     const [news,setNews] = useState([])
     const [currentPage,setCurrentPage] = useState(1)
 
+    const [refreshing,setRefreshing] = useState(false)
+
 
  
+    const  onRefresh = useCallback(() => {
 
+      setCurrentPage(1)
+      setRefreshing(true);
+
+      setTimeout(() => {
+        renderCategory().then(()=>{
+          setRefreshing(false)
+        })
+      }, 1000);
+
+    }, [currentPage]);
 
 
    
-    
-
     const  renderCategory = async () => {
 
-      const apiUrl =
-      categoryName === 'all'
-            ? `http://localhost:5000/news/${currentPage}`
-            : `http://localhost:5000/category/${categoryName}-news/${currentPage}`;
+      const apiUrl = categoryName === 'all'
+            ? `https://nefete-backend-prod-api.vercel.app/news/${currentPage}`
+            : `https://nefete-backend-prod-api.vercel.app/category/${categoryName}-news/${currentPage}`;
 
         const response = await axios.get(apiUrl);
         const newData = response.data;
-        setNews(prevNews => [...prevNews, ...newData]);
+
+        if (currentPage === 1) {
+          setNews(newData);
+        } else {
+          setNews(prevNews => [...prevNews, ...newData]);
+        }        
         setLoading(false);
+
     }
 
 
@@ -67,7 +82,8 @@ function NewsCategory({navigation,categoryName}) {
 
     return (
       <CustomLinearGradient>
-        <FlashList data={news} 
+        <FlashList refreshControl={<RefreshControl onRefresh={onRefresh} refreshing={refreshing} />}
+                  data={news} 
                   ItemSeparatorComponent={() => ( <View style={styles.seperator} />)} 
                    ListHeaderComponent={()=> <View style={{marginBottom:20}}></View>}
                    ListFooterComponent={renderLoader}

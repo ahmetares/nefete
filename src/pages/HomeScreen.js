@@ -47,8 +47,8 @@ function HomeScreen({ navigation }) {
   const [loading, setLoading]  = useState(true)
 
   const  fetchHomePageNews = async () => {
-      const {data: newsList} = await axios.get(`http://localhost:5000/home-news`)  // android 10.0.2.2 ios localhost
-      const {data: NFT101} = await axios.get(`http://localhost:5000/home-nft101`)
+      const {data: newsList} = await axios.get(`https://nefete-backend-prod-api.vercel.app/home-news`)  // android 10.0.2.2 ios localhost
+      const {data: NFT101} = await axios.get(`https://nefete-backend-prod-api.vercel.app/home-nft101`)
       
 
       setHomeNews(newsList)   

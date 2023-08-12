@@ -8,19 +8,25 @@
     "nft101-header-title": "NFT 101",
     "nft101-header-description": "NFT and metaverse world made easy",
 
+    "market-header-title": "Market",
+    "market-header-description": "A quick overview, what happened in the NFT market today?",
+
     "homenft101-header-title": "NFT 101",
 
     "homepage-read-all-news": "View all news",
     "homepage-read-all-NFT101": "View all NFT101",
 
-    "drawer-about": "about us",
-    "drawer-language": "language",
-    "drawer-privacy": "privacy policy",
+    "drawer-about": "About us",
+    "drawer-language": "Language",
+    "drawer-privacy": "Privacy policy",
 
     "about-header": "About Us",
     "about1":"Nefete is a news platform that wants to grow the NFT and Metaverse space. In the evolving digital world, NFTs and Metaverse concepts are gaining a lot of attention. Nefete aims to follow these exciting new experiences and technologies and provide its readers with the most up-to-date information.",
     "about2":"Nefete explores how NFTs and the Metaverse interact with each other and the potential of these technologies in art, entertainment, commerce and other fields. The news platform explores how artists can sell their work through NFTs, how gaming is integrated into the Metaverse, how digital commerce is transforming, and how the Metaverse will be shaped in the future.",
     "about3":"At the same time, Nefete introduces its readers to these exciting fields and reports on new projects, collaborations and technological developments. For example, it explores the use of NFTs in the music industry, digital exhibitions in the art world or the growing digital economy in the Metaverse. In this way, Nefete offers its readers the opportunity to follow interesting events, new opportunities and future trends in the world of NFTs and the Metaverse.",
+    "about4": "You can reach us on our social media accounts and send us your comments and suggestions.",
+    "about5": "This application was designed and developed by Ahmet Taha Arslan.",
+
 
     "tabbar-home": "Home",
     "tabbar-news": "News",
@@ -32,10 +38,28 @@
     "NFT-category": "NFT",
     "metaverse-category": "Metaverse",
     "music-category": "Music",
-    "gaming-category": "Gaming"
+    "gaming-category": "Gaming",
 
-    
 
+    "privacy-header":"Privacy Policy",
+    "privacy1":"All rights reserved for all content on the site. 2022 © Nefete - Not to be used without permission of the Site Owner. . This is a production of WAGMI BİLİŞİM VE REKLAMCILIK TİCARET LİMİTED ŞİRKETİ. **** nefete.com.tr (hereinafter referred to as the Website) aims to provide up-to-date information and promotion to people interested in this field by sharing news, videos, reviews and file topics on games NFT and Metaverse technology and similar topics.",
+    "privacy2":"The rights to all written, visual, video, etc. content prepared by this Website belong to Nefete, and users may not copy and/or use such content prepared by nefete.com.tr without permission. This copying prohibition does not cover the channels that have been granted the right and permission to share. Nefete.com.tr has the right to change, remove, correct, add or remove these written, visual, video, etc. contents at any time. In the event that any content that may be used in the content prepared by the Website falls within the scope of copyright, this Website is responsible for making the necessary arrangements about the content within 72 hours. The User gains the right to access and use certain services, interfaces, etc. from the moment he/she logs in to the Website.",
+    "privacy3":"The user accepts, declares and undertakes that he/she makes his/her decision regarding the game, nft, metaverse and other promoted products on the Website independently of the content on the site and that nefete.com.tr has no material and/or moral responsibility for the relevant game and/or product. The User may in no way claim that he/she has suffered damage based on the information contained on the Website. nefete.com.tr may place software called Cookie (cookie) on the computers of the users when it deems necessary for the purposes of use of the website, including but not limited to the purposes of use of the website, and which helps to identify the user. The use of cookies is a practice accepted as a standard policy in this Website visits and on the internet. Users reserve the right to block Cookies to be placed for functional use in accordance with their wishes through their personal web browser settings. Third party providers, including Google, use cookies to serve ads based on users' previous visits to your website. DoubleClick and Oracle's use of cookies allows it and its business partners to serve ads to your users based on their visits to your site and/or other sites on the Internet. Users may opt out of the use of DoubleClick and Oracle cookies for interest-based advertising by visiting their Ads Settings. (Alternatively, you may direct users to opt out of a third party provider's use of cookies for interest-based advertising by visiting aboutads.info.) The Website has the right to record Users' IP information in order to identify Users in a general way and to collect demographic information comprehensively. The Website accepts, declares and undertakes to use the collected user information only for its own workflow, not to share it with third parties and not to sell it to any organization or company, unless otherwise stated in these Terms of Use and Privacy Statement.",
+    "privacy4":"However, confidential information may be disclosed to third parties within the framework of the following legal situations and legal procedures. 1- In case of a written request from legal authorities in this direction 2- In order to protect and defend the site property rights 3- Within the framework of the rules you have accepted in the terms of use Due to the user information to be shared within these obligations and requests in three items above, the user agrees that he / she will not make any material or moral claim from the Website with the claim that the privacy rules specified in this Privacy Statement have been violated, and that the Website has no obligation to compensate. Nefete.com.tr reserves the right to direct users to another site with banners and redirection applications that it will place in accordance with the business policies it has adopted within its domain name. The user accepts that nefete.com.tr does not have any responsibility for the content and privacy policies that he/she will encounter on the website he/she accesses by logging in to these contents.",
+
+
+    "market-nft-header":"Top 50 Sales in 24 Hours",
+    "market-nft-priceChange":"Price change ",
+    "market-nft-firstMint":"First sale after mint",
+
+
+    "market-collection-header":"Top 50 Collections in 24 Hours",
+    "market-collection-volume":"Volume created",
+    "market-collection-floor": "Floor price",
+
+    "market-marketplace-header": "Top 50 Marketplaces in 24 Hours",
+    "market-marketplace-seller": "Seller",
+    "market-marketplace-volume": "Volume"
 
 
 

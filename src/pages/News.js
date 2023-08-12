@@ -21,7 +21,7 @@ function News({navigate}) {
 
 
     const fetchNews = async () => {
-      const {data: newsList} = await axios.get('http://localhost:5000/news/1')
+      const {data: newsList} = await axios.get('https://nefete-backend-prod-api.vercel.app/news/1')
       setNews(newsList)
   }
     useEffect(()=>{

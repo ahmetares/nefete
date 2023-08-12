@@ -13,7 +13,7 @@ function NFT101({navigation}) {
   const [loading, setLoading]  = useState(true)
 
   const  fetchNFT101 = async () => {
-      const {data: nft101} = await axios.get(`http://localhost:5000/nft101`)
+      const {data: nft101} = await axios.get(`https://nefete-backend-prod-api.vercel.app/nft101`)
       setNft101News(nft101)   
       setLoading(false)      
   }

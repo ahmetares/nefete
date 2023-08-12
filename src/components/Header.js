@@ -26,6 +26,10 @@ function Header({header,color,border}) {
     setTitle('nft101-header-title')
     setDesc('nft101-header-description')
    }
+   if(header == 'Market'){
+    setTitle('market-header-title')
+    setDesc('market-header-description')
+   }
   }
 
   useEffect(()=> {

@@ -4,12 +4,31 @@ import { setCurrentDrawer } from '../store/generalSlice/generalSlice';
 import { useSelector, useDispatch } from 'react-redux'
 import truncate from '../helper/textTruncate';
 import FastImage from 'react-native-fast-image';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
 
 function NFT101Card({nft101,onClick}) {
 
    
     const subtitle = truncate(nft101.sub_title, 15)
+
+    const [lang,setLang] = useState('')
+
+    const findLanguage = () => {
+      const lang = AsyncStorage.getItem('user-language').
+      then((res) => 
+      setLang(res))
+     }
+ 
+     useEffect(()=> {
+       findLanguage()
+     },[lang])
     
+
+
+     if(lang==='en' && nft101.titleen===''){
+        return null
+     }
 
   
   
@@ -20,8 +39,8 @@ function NFT101Card({nft101,onClick}) {
                 <FastImage style={styles.image} source={{uri:`https://nefete.com.tr/${nft101.thumbnail}` }} />
 
                 <View style={styles.textsContainer}>
-                    <Text style={styles.title}> {nft101.title} </Text>
-                    <Text style={styles.date}> {nft101.sub_title} </Text>
+                    <Text style={styles.title}> {lang === 'tr' ? nft101.title : nft101.titleen} </Text>
+                    <Text style={styles.date}> {lang === 'tr' ? nft101.sub_title : nft101.sub_titleen } </Text>
                 </View>
             </View>
 

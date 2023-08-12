@@ -14,14 +14,10 @@ function AboutText() {
 
 
         <Text style={[styles.textContent]}>{t('about1')} </Text>
-
-
-
         <Text style={styles.textContent}> {t('about2')}  </Text>
-
-
-
-        <Text style={[styles.textContent,{marginBottom:25}]}> {t('about3')} </Text>
+        <Text style={styles.textContent}> {t('about3')}  </Text>
+        <Text style={styles.textContent}> {t('about4')}  </Text>
+        <Text style={[styles.textContent,{marginBottom:'10%'}]}> {t('about5')} </Text>
 
 
 

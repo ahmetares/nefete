@@ -8,19 +8,26 @@
     "nft101-header-title": "NFT 101",
     "nft101-header-description": "NFT ve metaverse dünyası artık daha kolay",
 
+
+    "market-header-title": "Market",
+    "market-header-description": "Hızlı bir bakış, bugün NFT piyasasında ne yaşandı?",
+
     "homenft101-header-title": "NFT 101",
 
     "homepage-read-all-news": "Tüm haberleri incele",
     "homepage-read-all-NFT101": "Tüm NFT 101'leri incele",
 
-    "drawer-about": "hakkımızda",
-    "drawer-language": "dil",
-    "drawer-privacy": "gizlilik politikası",
+    "drawer-about": "Hakkımızda",
+    "drawer-language": "Dil",
+    "drawer-privacy": "Gizlilik politikası",
 
     "about-header": "Hakkımızda",
     "about1": "Nefete, NFT ve Metaverse alanını büyütmek isteyen bir haber platformudur. Gelişen dijital dünyada, NFT'ler ve Metaverse kavramları büyük ilgi görmektedir. Nefete, bu heyecan verici yeni deneyimleri ve teknolojileri takip ederek, okuyucularına en güncel bilgileri sunmayı hedeflemektedir.",
     "about2": "Nefete, NFT'lerin ve Metaverse'in birbirleriyle nasıl etkileşimde olduğunu, bu teknolojilerin, sanat, eğlence, ticaret ve diğer alanlardaki potansiyelini araştırmaktadır. Haber platformu, sanatçıların NFT'ler aracılığıyla eserlerini nasıl satabileceğini, oyun dünyasının nasıl Metaverse'e entegre olduğunu, dijital ticaretin nasıl bir dönüşüm geçirdiğini ve Metaverse'in gelecekte nasıl şekilleneceğini ele almaktadır.",
     "about3": "Aynı zamanda Nefete, okuyucularına bu heyecan verici alanları anlatırken, yeni projeleri, işbirliklerini ve teknolojik gelişmeleri de aktarmaktadır. Örneğin, NFT'lerin müzik endüstrisindeki kullanımını, sanat dünyasında gerçekleşen dijital sergileri veya Metaverse üzerindeki büyüyen dijital ekonomiyi incelemektedir. Bu şekilde, Nefete okuyucularına NFT ve Metaverse dünyasında yaşanan ilgi çekici olayları, yeni fırsatları ve gelecek trendlerini takip etme imkanı sunmaktadır.",
+    "about4": "Bize sosyal medya hesaplarımızdan ulabilir, görüşlerinizi ve önerilerinizi iletebilirsiniz.",
+    "about5": "Bu uygulama Ahmet Taha Arslan tarafından tasarlanmış ve geliştirilmiştir.",
+
 
     "tabbar-home": "Anasayfa",
     "tabbar-news": "Haberler",
@@ -31,7 +38,33 @@
     "NFT-category": "NFT",
     "metaverse-category": "Metaverse",
     "music-category": "Müzik",
-    "gaming-category": "Oyun"
+    "gaming-category": "Oyun",
+
+    "privacy-header":"Gizlilik Politikası",
+    "privacy1":"Sitede yer alan tüm içeriğin hakları saklıdır. 2022 © Nefete - Site Sahibi izni olmaksızın kullanılamaz. . Bu bir WAGMI BİLİŞİM VE REKLAMCILIK TİCARET LİMİTED ŞİRKETİ. yapımıdır **** nefete.com.tr (yazı içerisinde bundan böyle kısaca Web Sitesi olarak anılacaktır), oyunlar NFT ve Metaverse teknolojisi ve benzeri konular üzerine haber, video, inceleme ve dosya konuları paylaşarak bu alana ilgili insanlara güncel bilgi vermeyi ve tanıtım yapmayı hedef almıştır.",
+    "privacy2":"İşbu Web Sitesi tarafından hazırlanan tüm yazılı, görsel, video vb. içeriklerin hakları Nefete’ye ait olup, kullanıcılar izinsiz olarak nefete.com.tr tarafınca hazırlanan bu içerikleri kopyalayamaz ve/veya kullanamaz. İşbu kopyalama yasağı tarafımızca uygun görülmüş paylaşım hakkı ve izni verilmiş mecraları kapsamamaktadır. Nefete.com.tr dilediği zaman bu yazılı, görsel, video vb. içerikleri değiştirme, kaldırma, düzeltme, ekleme ya da çıkarma yapma hakkına sahiptir. Web Sitesi tarafından hazırlanan içeriklerde kullanabilecek herhangi bir içeriğin telif hakkı kapsamına girmesi durumunda, işbu Web Sitesi içerik hakkında gerekli düzenlemeyi 72 saat içerisinde yapmakla sorumludur. Kullanıcı, Web Sitesine giriş yaptığı andan itibaren belirli servis, arayüz vb. işlevlere erişim ve kullanım hakkı kazanmaktadır.",
+    "privacy3":"Kullanıcı, Web Sitesi'nde yer alan oyun, nft, metaverse ve diğer tanıtımı yapılan ürünlerle ilgili kararını sitedeki içeriklerden bağımsız olarak verdiğini ve ilgili oyun ve/veya ürüne ilişkin nefete.com.tr'nin maddi ve/veya manevi sorumluluğu olmadığını kabul, beyan ve taahhüt eder. Kullanıcı, hiçbir şekilde Web Sitesi'nde yer alan bilgilere istinaden zarara uğradığı iddiasında bulunamaz. nefete.com.tr, internet sitesinin kullanım amaçları doğrultusunda ve bunlarla sınırlı olmak üzere gerekli gördüğü durumlarda kullanıcıların bilgisayarlarına Cookie (çerez) olarak adlandırılan ve kullanıcıyı tanımlamaya yardımcı olan yazılımı yerleştirebilir. Cookie kullanımı, işbu Web Sitesi ziyaretlerinde ve internet üzerinde standart bir politika olarak kabul edilen uygulamadır. Kullanıcılar istekleri doğrultusunda işlevsel kullanım amacıyla yerleştirilecek Cookie'leri kişisel web tarayıcı ayarları sayesinde engelleyebilme haklarını saklı tutarlar. Google dahil üçüncü taraf sağlayıcılar, kullanıcıların web sitenize yaptığı önceki ziyaretlere dayalı olarak reklam yayınlamak üzere çerezleri kullanmaktadır. DoubleClick ve Oracle çerezlerini kullanması, kendisinin ve iş ortaklarının, sitenize ve/veya İnternet'teki diğer sitelere yaptıkları ziyaretlere dayalı olarak kullanıcılarınıza reklam sunmasına olanak tanır. Kullanıcılar, Reklam Ayarlarını ziyaret ederek ilgi alanına dayalı reklamcılık için DoubleClick ve Oracle çerezi kullanımını devre dışı bırakabilir. (Alternatif olarak, kullanıcıları aboutads.info adresini ziyaret ederek, ilgi alanına dayalı reklamcılık için bir üçüncü taraf sağlayıcının çerez kullanımını devre dışı bırakmaya yönlendirebilirsiniz.) Web Sitesi, Kullanıcıların IP bilgilerini genel bir şekilde Kullanıcıların tanımlanmasını sağlamak ve kapsamlı olarak demografik bilgi toplamak amacıyla kayıt etme hakkına sahiptir. Web Sitesi, işbu Kullanım Koşulları ve Gizlilik Bildirimi’nde aksi belirtilmediği sürece toplanan kullanıcı bilgilerini yalnızca kendi iş akışı için kullanmayı, üçüncü kişilerle paylaşmamayı ve herhangi bir kuruluş ya da şirkete satmamayı kabul, beyan ve taahhüt eder.",
+    "privacy4":"Ancak, gizlilik kapsamında olan bilgiler aşağıda belirtilen yasal durumlar ve yasal prosedürler çerçevesinde 3. şahıslara açılabilir. 1- Yasal mercilerden bu yönde yazılı bir talep oluşması halinde 2- Site mülkiyet haklarını korumak ve savunmak amacıyla 3- Kullanım şartlarında kabul ettiğiniz kurallar çerçevesinde Yukarıda üç madde halinde yer alan bu yükümlülükler ve talepler içerisinde paylaşılacak kullanıcı bilgileri dolayısıyla, kullanıcı işbu Gizlilik Bildirimi ile belirtilen gizlilik kurallarının dışına çıkıldığı iddiası ile Web Sitesi'nden maddi ya da manevi herhangi bir talepte bulunmayacağını, Web Site'sinin tazmin yükümlülüğü olmadığını kabul eder. Nefete.com.tr, kendisine ait alan adı içerisinde benimsemiş olduğu iş politikalarına uygun olarak yerleştireceği Banner ve yönlendirme uygulamaları ile kullanıcıları başka bir siteye yönlendirebilme hakkını saklı tutar. Kullanıcı işbu içeriklere giriş yaparak erişim sağladığı internet sitesinde karşılaşacağı içerik ve gizlilik politikalarında nefete.com.tr’nin herhangi bir sorumluluğu bulunmadığını kabul eder.",
+
+
+    "market-nft-header":"Son 24 Saatin En İyi 50 NFT Satışı",
+    "market-nft-priceChange":"Fiyat değişimi ",
+    "market-nft-firstMint":"Mint sonrası ilk satış",
+
+
+    "market-collection-header":"Son 24 Saatin En İyi 50 Koleksiyonu",
+    "market-collection-volume":"Yaratılan hacim",
+    "market-collection-floor": "Floor fiyatı",
+
+    "market-marketplace-header": "Son 24 Saatin En İyi 10 Pazar Yeri",
+    "market-marketplace-seller": "Satıcı",
+    "market-marketplace-volume": "Yaratılan Hacim"
+
+
+
+
+
+
 
 
 

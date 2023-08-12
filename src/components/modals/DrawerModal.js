@@ -54,7 +54,7 @@ const DrawerModal  = ({visible, onClose, onSend, navigation}) => {
             <View style={[styles.options, {marginTop:20}]}>
 
                 <TouchableOpacity style={styles.optionsWrapper} onPress={()=> Linking.openURL('https://nefete.com.tr/')}>
-                    <Text style={styles.optionText}>nefete.com</Text>
+                    <Text style={styles.optionText}>Nefete web</Text>
                 </TouchableOpacity>
 
                 <View style={styles.seperator} />
