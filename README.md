@@ -13,5 +13,6 @@
 - Caching Mechanism: AsyncStorage
 - HTTP Requests: Axios
 - Localization: i18next
+- Pagination
 - Item Listing: FlashList (Shopify)
 - Image Optimization: React Native Fast Image

@@ -41,18 +41,12 @@ function HomeScreen({ navigation }) {
     )
   }
 
-  const [homeNews,setHomeNews] = useState([])
-  const [homeNft101,setHomeNft101] = useState([])
-
+  const [home,setHome] = useState([])
   const [loading, setLoading]  = useState(true)
 
   const  fetchHomePageNews = async () => {
-      const {data: newsList} = await axios.get(`https://nefete-backend-prod-api.vercel.app/home-news`)  // android 10.0.2.2 ios localhost
-      const {data: NFT101} = await axios.get(`https://nefete-backend-prod-api.vercel.app/home-nft101`)
-      
-
-      setHomeNews(newsList)   
-      setHomeNft101(NFT101)
+      const {data: homeList} = await axios.get(`https://nefete-backend-prod-api.vercel.app/home`)
+      setHome(homeList)
       setLoading(false)
          
   }
@@ -75,8 +69,6 @@ function HomeScreen({ navigation }) {
 
     <View style={{flex:1}}> 
 
-  
-
     <Header header={'Anasayfa'} />
 
       <TouchableWithoutFeedback onPress={toggleModal} style={styles.iconContainer}>
@@ -89,9 +81,9 @@ function HomeScreen({ navigation }) {
 
       <FlatList
       ItemSeparatorComponent={() => ( <View style={styles.seperator} />)} 
-      ListHeaderComponent={()=> <FirstNews news={homeNews[0]} navigation={navigation} />}
-      ListFooterComponent={ <HomeNFT101 data={homeNft101} navigation={navigation} />}
-      data={homeNews.slice(1)} 
+      ListHeaderComponent={()=> <FirstNews news={home[0]} navigation={navigation} />}
+      ListFooterComponent={ <HomeNFT101 data={home.slice(6)} navigation={navigation} />}
+      data={home.slice(1,6)} 
       renderItem={({item}) => <NewsCard news={item} onClick={()=>navigateToNewsDetail(item)}/>} />
 
       {drawerStatus && openedModalTasks()}
@@ -103,7 +95,6 @@ function HomeScreen({ navigation }) {
       </View>
 
       </CustomLinearGradient>
-
 
   );
 }
