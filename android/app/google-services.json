@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "532490177122",
+    "project_id": "nefete-abb8c",
+    "storage_bucket": "nefete-abb8c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:532490177122:android:9a666db1a5802a87da1f3b",
+        "android_client_info": {
+          "package_name": "com.nefete"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDEFhFc6zrzDxbcZSpMDTaYkwyPfM9POB8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

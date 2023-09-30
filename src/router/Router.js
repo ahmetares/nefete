@@ -1,5 +1,5 @@
-import { View,Image,StyleSheet,Animated,TouchableOpacity, Dimensions } from 'react-native';
-import { NavigationContainer,useNavigation, } from '@react-navigation/native';
+import { View,Image,StyleSheet,Animated,TouchableOpacity, Dimensions, ImageBackground, Platform, StatusBar } from 'react-native';
+import { DarkTheme, DefaultTheme, NavigationContainer,useNavigation, } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { useSelector,useDispatch } from 'react-redux'
@@ -7,6 +7,9 @@ import { useRoute,useIsFocused } from '@react-navigation/native';
 import MCIcon from "react-native-vector-icons/MaterialCommunityIcons"
 import EntIcon from "react-native-vector-icons/Entypo"
 import { useTranslation } from 'react-i18next';
+//import analytics from '@react-native-firebase/analytics';
+//import { useState,useRef } from 'react';
+
 
 
 import HomeScreen from '../pages/HomeScreen';
@@ -79,7 +82,7 @@ const Stack = createNativeStackNavigator();
 
   
     return (
-    <Tab.Navigator screenOptions={{headerShown:false,tabBarStyle:{zIndex:1},}} >
+    <Tab.Navigator screenOptions={{headerShown:false,tabBarStyle:{zIndex:1},  }} >
 
     <Tab.Screen name="Anasayfa"  component={HomeStack} 
     listeners={{
@@ -144,11 +147,30 @@ const Stack = createNativeStackNavigator();
 
 export default function Router({}) {
 
-
-
+ // const routeNameRef =useRef();
+ // const navigationRef =useRef();
 
   return (
-    <NavigationContainer>
+    <NavigationContainer 
+    
+   /* ref={navigationRef}
+      onReady={() => {
+        routeNameRef.current = navigationRef.current.getCurrentRoute().name;
+      }}
+      onStateChange={async () => {
+        const previousRouteName = routeNameRef.current;
+        const currentRouteName = navigationRef.current.getCurrentRoute().name;
+
+        if (previousRouteName !== currentRouteName) {
+          await analytics().logScreenView({
+            screen_name: currentRouteName,
+            screen_class: currentRouteName,
+          });
+        }
+        routeNameRef.current = currentRouteName;
+      }} */
+    
+    >
      <Stack.Navigator screenOptions={{headerShown:true, }}>
 
          <Stack.Screen 
@@ -158,7 +180,7 @@ export default function Router({}) {
          options={{
           headerBackground: () => {
              return(
-              <View style={{display:'flex', marginTop:'8%',justifyContent:'space-evenly', alignItems:'center',}}>
+              <View style={[ Platform.OS === 'ios' && styles.headerStyle , { display:'flex',justifyContent:'space-evenly', alignItems:'center',}]}>
               <Image style={styles.logo} source = {{uri:'https://nefete.com.tr/img/logo.png'}}/>
               </View>
             )
@@ -189,9 +211,14 @@ const styles = StyleSheet.create({
     marginBottom:9,
     backgroundColor:'transparent',
     alignItems:'center',
-    width:'30%',
+    width:'25%',
     height:'100%',
     resizeMode:'contain',
+    marginTop:'8.5%'
 
 },
+
+headerStyle: {
+  backgroundColor:'white'
+}
 })

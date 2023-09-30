@@ -18,8 +18,9 @@ const renderersProps = {
 };
 
 
-
 function NewsDetail({route,navigation}) {
+
+  
 
     const [lang,setLang] = useState('')
     const {title,titleen,detailsen,details,thumbnail,created_at} = route.params.item
@@ -54,12 +55,14 @@ function NewsDetail({route,navigation}) {
         setLoading(false)
       },[]) */
 
-      const isFocused = useIsFocused();
 
-      useEffect(() => {
-       dispatch(setBackIconVisible(true))
+      useEffect(() => {       //sayfa açıldığında back iconunu getir 
+       dispatch(setBackIconVisible(true))     
       }, [])
 
+      navigation.addListener('beforeRemove', (e) => {  // swipe ile geri gelme için (ios) back iconunu kaldır
+        dispatch(setBackIconVisible(false))
+  })
 
 
 
@@ -70,6 +73,12 @@ function NewsDetail({route,navigation}) {
       
 
       const { width } = useWindowDimensions();
+
+
+     
+    
+ 
+
 
 
     return (
