@@ -2,9 +2,21 @@ import { StyleSheet, Text, View, ScrollView } from 'react-native';
 import CustomLinearGradient from '../components/CustomLinearGradient';
 import { useTranslation } from 'react-i18next';
 
-function Privacy() {
+import { useDispatch } from 'react-redux';
+import { setBackIconVisible } from '../store/generalSlice/generalSlice';
+
+  
+
+
+function Privacy({navigation}) {
 
   const { t } = useTranslation()
+
+  const dispatch = useDispatch()
+
+  navigation.addListener('beforeRemove', (e) => {  // swipe ile geri gelme için (ios) back iconunu kaldır
+    dispatch(setBackIconVisible(false))
+})
 
 
   return (

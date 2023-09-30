@@ -7,9 +7,16 @@ import LanguageList from "../services/languageList.json"
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import AntIcon from 'react-native-vector-icons/AntDesign'
 import RNRestart from 'react-native-restart'; // Import package from node modules
+import { setBackIconVisible } from '../store/generalSlice/generalSlice';
 
 
 function Language({navigation}) {
+
+      const dispatch = useDispatch()
+
+      navigation.addListener('beforeRemove', (e) => {  // swipe ile geri gelme için (ios) back iconunu kaldır
+        dispatch(setBackIconVisible(false))
+    })
 
     const changleLng = (lng) => {
         i18next.changeLanguage(lng)
