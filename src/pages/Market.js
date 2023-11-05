@@ -6,13 +6,16 @@ import { FlashList } from '@shopify/flash-list';
 import MarketList from '../components/MarketCard';
 import Header from '../components/Header';
 import { useTranslation } from 'react-i18next';
-
+import Config from 'react-native-config';
 
 function Market() {
+
 
   const {t} = useTranslation()
 
 
+
+  
 
   const [topSales,setTopSales] = useState([])
   const [topCollections,settopCollections] = useState([])
@@ -29,7 +32,7 @@ function Market() {
     method: 'GET',
     headers: {
       accept: 'application/json',
-      'X-API-KEY': '6a21a438-066b-466e-95f7-2bd4cccd3bd0'
+      'X-API-KEY': Config.API_KEY
     }
   };
 
